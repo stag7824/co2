@@ -18,7 +18,10 @@ interface FooterLink { labelKey: string; href: string; }
 const footerLinks = socialData.footerLinks as FooterLink[];
 ---
 <footer class="site-footer">
-  <div class="footer-logo">🌍 {SITE.name}</div>
+  <div class="footer-logo">
+    <img src="/logo.svg" alt="" width="32" height="32" />
+    {SITE.name}
+  </div>
   <div class="footer-tagline">{t(lang, 'footer.tagline')}</div>
 
   <div class="footer-links">

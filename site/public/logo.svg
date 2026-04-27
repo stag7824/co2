@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ReduceCO2Now">
   <defs>
-    <linearGradient id="favSwirl" x1="8" y1="20" x2="56" y2="44" gradientUnits="userSpaceOnUse">
+    <linearGradient id="rc2nSwirl" x1="8" y1="20" x2="56" y2="44" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#3fbcaa"/>
       <stop offset="55%" stop-color="#4fc28a"/>
       <stop offset="100%" stop-color="#7ad26a"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0c1a10"/>
-  <g fill="none" stroke="url(#favSwirl)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-18 32 34)">
+  <g fill="none" stroke="url(#rc2nSwirl)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-18 32 34)">
     <path d="M32 13
              C 47 13, 52 24, 50 33
              C 48 42, 39 49, 28 49
@@ -20,6 +19,6 @@
              C 30 30, 31 32, 31 34"/>
   </g>
   <text x="48" y="18" text-anchor="middle"
-        font-family="ui-sans-serif,system-ui,sans-serif"
+        font-family="ui-sans-serif,system-ui,'DM Sans',sans-serif"
         font-weight="700" font-size="13" fill="#7ad26a">2</text>
 </svg>

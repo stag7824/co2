@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 // Build output goes to dist/ — that's what gets uploaded to Strato.
 export default defineConfig({
   site: 'https://reduceco2now.com',
-  trailingSlash: 'never',
+  trailingSlash: 'ignore',
   build: {
     format: 'directory',
   },

@@ -107,7 +107,7 @@ export function CO2Chart({ labels }: { labels: IndustrialLabels }) {
         }
       });
     }
-    const tx = Math.min(mx + PAD.l + 12, W - 200);
+    const tx = Math.min(mx + PAD.l + 12, W - 290);
     setTooltip({ year, rows, x: tx, y: 20 });
   }
 
@@ -164,15 +164,15 @@ export function CO2Chart({ labels }: { labels: IndustrialLabels }) {
               <text key={yr} x={scaleX(yr, xMin, xMax, cW)} y={cH + 18} textAnchor="middle" fill="rgba(138,170,144,0.7)" fontSize={10} fontFamily="DM Mono,monospace">{yr}</text>
             ))}
             <text x={-35} y={cH / 2} textAnchor="middle" transform={`rotate(-90,-35,${cH / 2})`} fill="rgba(138,170,144,0.5)" fontSize={10} fontFamily="DM Mono,monospace">{labels.axisLabel}</text>
-            {tooltip && (
+            {tooltip && tooltip.rows.length > 0 && (
               <g transform={`translate(${tooltip.x - PAD.l},${tooltip.y})`} style={{ pointerEvents: 'none' }}>
-                <rect x={0} y={0} width={200} height={tooltip.rows.length * 22 + 30} rx={8} fill="rgba(17,31,21,0.97)" stroke="rgba(120,180,130,0.3)" strokeWidth={1} />
+                <rect x={0} y={0} width={280} height={tooltip.rows.length * 22 + 30} rx={8} fill="rgba(17,31,21,0.97)" stroke="rgba(120,180,130,0.3)" strokeWidth={1} />
                 <text x={10} y={18} fill="rgba(138,170,144,0.7)" fontSize={9} fontFamily="DM Mono,monospace" letterSpacing="0.1em">{tooltip.year}</text>
                 {tooltip.rows.map((r, i) => (
                   <g key={i} transform={`translate(0,${i * 22 + 26})`}>
                     <circle cx={10} cy={5} r={4} fill={r.color} />
                     <text x={20} y={9} fill="#e8f0e9" fontSize={10} fontFamily="DM Mono,monospace" fontWeight="500">{r.val}</text>
-                    <text x={80} y={9} fill="rgba(138,170,144,0.7)" fontSize={9} fontFamily="DM Sans,sans-serif">{r.label}</text>
+                    <text x={92} y={9} fill="rgba(200,220,205,0.85)" fontSize={9} fontFamily="DM Sans,sans-serif">{r.label.length > 32 ? r.label.slice(0, 30) + '…' : r.label}</text>
                   </g>
                 ))}
               </g>
@@ -219,6 +219,8 @@ interface IceLabels {
 }
 
 export function IceCoreChart({ labels }: { labels: IceLabels }) {
+  const [hover, setHover] = useState<{ year: number; ppm: number; x: number; y: number } | null>(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
   const W = 860, H = 180, PAD = { t: 15, r: 20, b: 35, l: 55 };
   const cW = W - PAD.l - PAD.r, cH = H - PAD.t - PAD.b;
   const allPts: Pt[] = [...iceCore, [1750, 280], [2025, 425]];
@@ -230,9 +232,37 @@ export function IceCoreChart({ labels }: { labels: IceLabels }) {
     [-200000, '200k'], [-50000, '50k'], [0, '0'], [2025, 'Now'],
   ];
 
+  function fmtYear(y: number): string {
+    if (y < -1000) return `${Math.round(-y / 1000)}k BCE`;
+    if (y < 0) return `${-y} BCE`;
+    if (y < 1000) return `${y} CE`;
+    return `${y}`;
+  }
+
+  function handleMove(e: MouseEvent<SVGSVGElement>) {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const scale = W / rect.width;
+    const mx = (e.clientX - rect.left) * scale - PAD.l;
+    if (mx < 0 || mx > cW) { setHover(null); return; }
+    const year = Math.round((mx / cW) * (xMax - xMin) + xMin);
+    const idx = allPts.findIndex((p) => p[0] >= year);
+    let ppm: number;
+    if (idx <= 0) ppm = allPts[0][1];
+    else {
+      const [y0, v0] = allPts[idx - 1];
+      const [y1, v1] = allPts[idx];
+      const tt = (year - y0) / (y1 - y0);
+      ppm = v0 + tt * (v1 - v0);
+    }
+    setHover({ year, ppm, x: Math.min(mx + PAD.l + 12, W - 200), y: 10 });
+  }
+
   return (
     <div style={{ overflowX: 'auto' }}>
-      <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', minWidth: 300, display: 'block' }}>
+      <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', minWidth: 300, display: 'block', cursor: 'crosshair' }}
+        onMouseMove={handleMove} onMouseLeave={() => setHover(null)}>
         <defs>
           <linearGradient id="iceGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#3fbcaa" stopOpacity="0.12" />
@@ -259,6 +289,13 @@ export function IceCoreChart({ labels }: { labels: IceLabels }) {
           <text x={10} y={15} fill="rgba(63,188,170,0.6)" fontSize={9} fontFamily="DM Mono,monospace">{labels.naturalRange}</text>
           <rect x={cW - 160} y={5} width={155} height={22} rx={4} fill="rgba(212,95,95,0.1)" stroke="rgba(212,95,95,0.3)" strokeWidth={1} />
           <text x={cW - 152} y={20} fill="#d45f5f" fontSize={9} fontFamily="DM Mono,monospace">{labels.industrialSpike}</text>
+          {hover && (
+            <g transform={`translate(${hover.x - PAD.l},${hover.y})`} style={{ pointerEvents: 'none' }}>
+              <rect x={0} y={0} width={170} height={42} rx={8} fill="rgba(17,31,21,0.97)" stroke="rgba(120,180,130,0.3)" strokeWidth={1} />
+              <text x={10} y={16} fill="rgba(138,170,144,0.75)" fontSize={9} fontFamily="DM Mono,monospace" letterSpacing="0.08em">{fmtYear(hover.year)}</text>
+              <text x={10} y={32} fill="#3fbcaa" fontSize={11} fontFamily="DM Mono,monospace" fontWeight="500">{hover.ppm.toFixed(1)} ppm</text>
+            </g>
+          )}
         </g>
       </svg>
     </div>

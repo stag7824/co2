@@ -25,7 +25,8 @@ const navItems: { href: string; key: string }[] = [
 ---
 <nav class="site-nav" aria-label="Primary">
   <a class="nav-logo" href={homeHref}>
-    🌍 {SITE.name}
+    <img src="/logo.svg" alt="" width="28" height="28" class="nav-logo-img" />
+    <strong>{SITE.name}</strong>
     {variant === 'home' && <span>— {t(lang, 'site.tagline')}</span>}
   </a>
 

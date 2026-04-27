@@ -50,24 +50,25 @@ function TLSparkline({
   points: Pt[];
   markers: Marker[];
 }) {
+  const [hovered, setHovered] = useState<number | null>(null);
   const W = 820, H = 100;
   const xMin = -800000, xMax = 2100, yMin = 150, yMax = 470;
 
   const path = pointsToPath(points, xMin, xMax, yMin, yMax, W, H - 20);
   const areaPath = path + ` L${W} ${H - 20} L0 ${H - 20} Z`;
 
-  // Compute marker rendering coords (faithful to prototype's `circles`).
   const circles = markers.map((m) => {
     let x: number;
     if (m.i === 1) {
-      // Miocene / 14M years ago — visually placed left-of-center per prototype.
       x = scaleX(0, xMin, xMax, W) * 0.7 + 20;
     } else {
       x = scaleX(m.x, xMin, xMax, W);
     }
     const yPpm = m.i === 0 ? 200 : m.i === 1 ? 280 : m.i === 2 ? 285 : m.i === 3 ? 340 : 425;
-    return { x, y: scaleY(yPpm, yMin, yMax, H - 20), color: m.color, i: m.i, label: m.label };
+    return { x, y: scaleY(yPpm, yMin, yMax, H - 20), color: m.color, i: m.i, label: m.label, ppm: yPpm };
   });
+
+  const hoverC = hovered !== null ? circles.find((c) => c.i === hovered) : null;
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', display: 'block', cursor: 'pointer' }}>
@@ -81,14 +82,15 @@ function TLSparkline({
       <path d={areaPath} fill="url(#sparkGrad)" />
       <path d={path} fill="none" stroke="#3fbcaa" strokeWidth={1.5} strokeLinejoin="round" strokeLinecap="round" />
       {circles.map((c) => (
-        <g key={c.i} onClick={() => onSelect(c.i)} style={{ cursor: 'pointer' }}>
+        <g key={c.i} onClick={() => onSelect(c.i)} onMouseEnter={() => setHovered(c.i)} onMouseLeave={() => setHovered(null)} style={{ cursor: 'pointer' }}>
+          <circle cx={c.x} cy={c.y} r={28} fill="transparent" />
           <circle
             cx={c.x}
             cy={c.y}
-            r={active === c.i ? 9 : 6}
+            r={active === c.i ? 9 : hovered === c.i ? 8 : 6}
             fill={c.color}
-            opacity={active === c.i ? 1 : 0.6}
-            style={{ transition: 'r 0.3s ease, opacity 0.3s ease, fill 0.3s ease' }}
+            opacity={active === c.i ? 1 : hovered === c.i ? 0.85 : 0.6}
+            style={{ transition: 'r 0.25s ease, opacity 0.25s ease, fill 0.3s ease' }}
           />
           {active === c.i && <circle cx={c.x} cy={c.y} r={14} fill="none" stroke={c.color} strokeWidth={1.5} opacity={0.4} />}
         </g>
@@ -107,6 +109,13 @@ function TLSparkline({
           {c.label}
         </text>
       ))}
+      {hoverC && (
+        <g transform={`translate(${Math.min(hoverC.x + 14, W - 130)},${Math.max(hoverC.y - 38, 4)})`} style={{ pointerEvents: 'none' }}>
+          <rect x={0} y={0} width={120} height={32} rx={6} fill="rgba(17,31,21,0.97)" stroke={hoverC.color} strokeOpacity={0.4} strokeWidth={1} />
+          <text x={8} y={13} fill="rgba(200,220,205,0.85)" fontSize={9} fontFamily="DM Sans,sans-serif">{hoverC.label}</text>
+          <text x={8} y={26} fill={hoverC.color} fontSize={10} fontFamily="DM Mono,monospace" fontWeight="500">~{hoverC.ppm} ppm</text>
+        </g>
+      )}
     </svg>
   );
 }
