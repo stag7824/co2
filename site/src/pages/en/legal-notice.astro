@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AddressBlock from '../../components/AddressBlock.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { LEGAL, LEGAL_LAST_UPDATED } from '../../config';
+const lang = 'en';
+const alt = { de: '/impressum', en: '/en/legal-notice' };
+---
+<BaseLayout title="Legal Notice" lang={lang} alternateUrls={alt} headerVariant="simple">
+  <article class="legal-prose">
+    <h1>Legal Notice (Impressum)</h1>
+    <p class="muted">
+      Information pursuant to § 5 DDG (German Digital Services Act, formerly TMG) and § 18 (2) MStV.
+      The German version is the legally authoritative one.
+    </p>
+
+    <h2>Service provider</h2>
+    <AddressBlock />
+
+    <h2>Contact</h2>
+    <p>
+      Email: <Placeholder value={LEGAL.email} /><br />
+      Phone: <Placeholder value={LEGAL.phone} />
+    </p>
+
+    <h2>Authorized representative(s)</h2>
+    <p><Placeholder value={LEGAL.representative} /></p>
+
+    <h2>Register entry</h2>
+    <p><Placeholder value={LEGAL.registerEntry} /></p>
+
+    <h2>VAT identification number</h2>
+    <p>According to § 27a German VAT Act: <Placeholder value={LEGAL.vatId} /></p>
+
+    <h2>Responsible for content under § 18 (2) MStV</h2>
+    <p>
+      <Placeholder value={LEGAL.contentResponsibleName} /><br />
+      <Placeholder value={LEGAL.contentResponsibleAddress} />
+    </p>
+
+    {LEGAL.showODRLink && (
+      <>
+        <h2>Online dispute resolution</h2>
+        <p>
+          The European Commission provides a platform for online dispute resolution (ODR):
+          <a href="https://ec.europa.eu/consumers/odr/" rel="noopener noreferrer" target="_blank">
+            https://ec.europa.eu/consumers/odr/
+          </a>. Our email address can be found above.
+        </p>
+        <p>
+          We are neither willing nor obliged to participate in dispute resolution proceedings before a
+          consumer arbitration board.
+        </p>
+      </>
+    )}
+
+    <h2>Liability for content</h2>
+    <p>
+      As a service provider, we are responsible under § 7 (1) DDG for our own content on these pages
+      under the general laws. According to §§ 8 to 10 DDG, however, we are not obliged to monitor
+      transmitted or stored third-party information or to investigate circumstances that indicate
+      illegal activity.
+    </p>
+
+    <h2>Liability for links</h2>
+    <p>
+      Our offer contains links to external third-party websites whose content we have no influence
+      over. Therefore, we cannot accept any liability for this third-party content. The respective
+      provider or operator of the linked pages is always responsible for their content.
+    </p>
+
+    <h2>Copyright</h2>
+    <p>
+      Content created by the site operators on these pages is subject to German copyright law.
+      Duplication, processing, distribution, and any form of commercialization beyond the limits of
+      copyright law require the written consent of the respective author or creator.
+    </p>
+
+    <hr />
+    <p class="muted small">Last updated: {LEGAL_LAST_UPDATED}</p>
+  </article>
+</BaseLayout>

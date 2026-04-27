@@ -1,0 +1,43 @@
+---
+import { t, type Lang } from '../i18n/index';
+import { SITE, SOCIAL } from '../config';
+import socialData from '../data/social-platforms.json';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const imprintHref = lang === 'de' ? '/impressum' : '/en/legal-notice';
+const privacyHref = lang === 'de' ? '/datenschutz' : '/en/privacy-policy';
+
+const year = new Date().getFullYear();
+
+// Keep the visibleSocial filter (so legacy SOCIAL config still works).
+const visibleSocial = SOCIAL.filter((s) => s.href && !s.href.startsWith('[TODO'));
+
+interface FooterLink { labelKey: string; href: string; }
+const footerLinks = socialData.footerLinks as FooterLink[];
+---
+<footer class="site-footer">
+  <div class="footer-logo">🌍 {SITE.name}</div>
+  <div class="footer-tagline">{t(lang, 'footer.tagline')}</div>
+
+  <div class="footer-links">
+    {footerLinks.map((l) => (
+      <a href={l.href} target="_blank" rel="noopener noreferrer">{t(lang, l.labelKey)}</a>
+    ))}
+    <a href={imprintHref}>{t(lang, 'nav.imprint')}</a>
+    <a href={privacyHref}>{t(lang, 'nav.privacy')}</a>
+  </div>
+
+  {visibleSocial.length > 0 && (
+    <div class="footer-links" aria-label={t(lang, 'footer.follow')}>
+      {visibleSocial.map((s) => (
+        <a href={s.href!} rel="noopener noreferrer me" target="_blank">{s.label}</a>
+      ))}
+    </div>
+  )}
+
+  <div class="footer-copy">
+    © {year} {SITE.name} · Dr. Thomas Buro · {t(lang, 'footer.rights')}
+  </div>
+</footer>

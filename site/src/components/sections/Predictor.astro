@@ -1,0 +1,38 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import { ImpactPredictor } from '../islands/ImpactPredictor';
+import predictorData from '../../data/predictor-data.json';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+// Resolve translatable strings on the server so the island only needs
+// concrete labels at hydration time.
+type Item = { ppm: number; temp: number; yearKey: string; color: string; impacts: string[] };
+const items = (predictorData.items as Item[]).map((it) => ({
+  ppm: it.ppm,
+  temp: it.temp,
+  color: it.color,
+  year: t(lang, it.yearKey),
+  impacts: it.impacts.map((k) => t(lang, k)),
+}));
+
+const labels = {
+  estTempRise: t(lang, 'predictor.estTempRise'),
+  abovePreindustrial: t(lang, 'predictor.abovePreindustrial'),
+  at: t(lang, 'predictor.at'),
+  globalTempRise: t(lang, 'predictor.globalTempRise'),
+  approxTimeline: t(lang, 'predictor.approxTimeline'),
+  footnote: t(lang, 'predictor.footnote'),
+};
+---
+<section class="predictor-section" id="predictor">
+  <div class="container">
+    <div class="section-label">{t(lang, 'predictor.label')}</div>
+    <h2 class="section-title reveal">
+      {t(lang, 'predictor.title1')} <em>{t(lang, 'predictor.titleEm')}</em>
+    </h2>
+    <p class="section-body reveal reveal-delay-1">{t(lang, 'predictor.body')}</p>
+    <ImpactPredictor client:load items={items} defaultIndex={predictorData.defaultIndex} labels={labels} />
+  </div>
+</section>

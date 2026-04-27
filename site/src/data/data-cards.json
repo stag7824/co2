@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "id": "co2-today", "value": "425 ppm", "color": "amber", "titleKey": "data.co2Today.title", "descKey": "data.co2Today.desc", "tag": "warning", "tagLabelKey": "science.tag.warning" },
+    { "id": "temp-rise", "value": "+1.55°C", "color": "danger", "titleKey": "data.tempRise.title", "descKey": "data.tempRise.desc", "tag": "critical", "tagLabelKey": "science.tag.critical2024" },
+    { "id": "stable-climate", "value": "800k yrs", "color": "teal", "titleKey": "data.stableClimate.title", "descKey": "data.stableClimate.desc", "tag": "info", "tagLabelKey": "science.tag.iceCore" },
+    { "id": "co2-history", "value": "14M yrs", "color": "danger", "titleKey": "data.co2History.title", "descKey": "data.co2History.desc", "tag": "critical", "tagLabelKey": "science.tag.deepTime" },
+    { "id": "warming-2100", "value": "6–8°C", "color": "amber", "titleKey": "data.warming2100.title", "descKey": "data.warming2100.desc", "tag": "warning", "tagLabelKey": "science.tag.highEnd" },
+    { "id": "co2-iceages", "value": "170 ppm", "color": "teal", "titleKey": "data.co2IceAges.title", "descKey": "data.co2IceAges.desc", "tag": "info", "tagLabelKey": "science.tag.paleo" }
+  ]
+}

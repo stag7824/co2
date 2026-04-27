@@ -1,0 +1,31 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import data from '../../data/data-cards.json';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+type Card = {
+  id: string; value: string; color: string;
+  titleKey: string; descKey: string;
+  tag: string; tagLabelKey: string;
+};
+const items = data.items as Card[];
+---
+<section style="background:var(--bg2);" id="science">
+  <div class="container">
+    <div class="section-label">{t(lang, 'science.label')}</div>
+    <h2 class="section-title reveal">
+      {t(lang, 'science.title1')} <em>{t(lang, 'science.titleEm')}</em>
+    </h2>
+    <p class="section-body reveal reveal-delay-1">{t(lang, 'science.body')}</p>
+    <div class="data-grid">
+      {items.map((c, i) => (
+        <div class={`data-card reveal${i % 3 === 0 ? '' : ' reveal-delay-' + (i % 3)}`}>
+          <div class={`data-card-num ${c.color}`}>{c.value}</div>
+          <div class="data-card-title">{t(lang, c.titleKey)}</div>
+          <div class="data-card-desc">{t(lang, c.descKey)}</div>
+          <div class={`data-card-tag tag-${c.tag}`}>{t(lang, c.tagLabelKey)}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

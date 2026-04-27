@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "dot": "amber",  "value": "425 ppm",     "descKey": "ticker.co2Today" },
+    { "dot": "danger", "value": "+1.55°C",     "descKey": "ticker.tempRise" },
+    { "dot": "danger", "value": "2024",        "descKey": "ticker.hottestYear" },
+    { "dot": "",       "value": "800,000 yrs", "descKey": "ticker.stable" },
+    { "dot": "teal",   "value": "14M years",   "descKey": "ticker.lastTime" },
+    { "dot": "danger", "value": "6–8°C",       "descKey": "ticker.warming2100" },
+    { "dot": "amber",  "value": "1/3",         "descKey": "ticker.foodWasted" },
+    { "dot": "teal",   "value": "25+",         "descKey": "ticker.languages" },
+    { "dot": "",       "value": "170 ppm",     "descKey": "ticker.iceAges" },
+    { "dot": "teal",   "value": "~3°C",        "descKey": "ticker.sensitivity" }
+  ]
+}

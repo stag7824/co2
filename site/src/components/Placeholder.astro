@@ -1,0 +1,8 @@
+---
+// Renders [TODO: ...] placeholder values with a visual highlight so they
+// can't be missed when filling in real data.
+interface Props { value: string; }
+const { value } = Astro.props;
+const isTodo = typeof value === 'string' && value.startsWith('[TODO');
+---
+{isTodo ? <span class="todo" title="Fill in before publishing">{value}</span> : <>{value}</>}

@@ -1,0 +1,35 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import data from '../../data/stats-ticker.json';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const items = data.items as { dot: string; value: string; descKey: string }[];
+---
+<div class="stats-strip" id="stats-strip">
+  <div class="stats-strip-inner" id="ticker">
+    {[...items, ...items].map((s) => (
+      <div class="stat-item">
+        <div class={`stat-dot${s.dot ? ' ' + s.dot : ''}`}></div>
+        <span class="stat-val">{s.value}</span>
+        <span class="stat-desc">{t(lang, s.descKey)}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  // Duplicate items further if the strip width is shorter than 2x viewport
+  // so the seamless ticker keeps working on ultra-wide screens.
+  const inner = document.getElementById('ticker');
+  if (inner) {
+    const ensureWidth = () => {
+      const parentW = inner.parentElement?.clientWidth ?? 0;
+      let safety = 4;
+      while (inner.scrollWidth < parentW * 2 && safety-- > 0) {
+        inner.append(...Array.from(inner.children).map((c) => c.cloneNode(true)));
+      }
+    };
+    ensureWidth();
+    window.addEventListener('resize', ensureWidth);
+  }
+</script>

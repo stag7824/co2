@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "icon": "🌊", "labelKey": "consequences.seaLevels" },
+    { "icon": "🔥", "labelKey": "consequences.heatwaves" },
+    { "icon": "🌪", "labelKey": "consequences.storms" },
+    { "icon": "🏜", "labelKey": "consequences.droughts" },
+    { "icon": "🌧", "labelKey": "consequences.floods" },
+    { "icon": "🧊", "labelKey": "consequences.iceSheets" },
+    { "icon": "🌿", "labelKey": "consequences.ecosystems" },
+    { "icon": "🐟", "labelKey": "consequences.acidification" },
+    { "icon": "🌾", "labelKey": "consequences.foodInsecurity" },
+    { "icon": "💧", "labelKey": "consequences.waterScarcity" }
+  ]
+}

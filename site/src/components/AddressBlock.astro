@@ -1,0 +1,19 @@
+---
+import { LEGAL } from '../config';
+import Placeholder from './Placeholder.astro';
+
+// Reusable address block used in both Impressum and Datenschutz.
+---
+<address>
+  <Placeholder value={LEGAL.responsibleName} />{LEGAL.legalForm && !LEGAL.legalForm.startsWith('[TODO') ? `, ${LEGAL.legalForm}` : ''}<br />
+  <Placeholder value={LEGAL.street} /><br />
+  <Placeholder value={LEGAL.postalCode} /> <Placeholder value={LEGAL.city} /><br />
+  {LEGAL.country}
+</address>
+
+<style>
+  address {
+    font-style: normal;
+    margin: 0.5rem 0 1rem;
+  }
+</style>

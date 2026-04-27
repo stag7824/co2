@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "id": "energy",      "num": "01",  "color": "default", "titleKey": "solutions.energy.title",      "descKey": "solutions.energy.desc",      "categoryKey": "solutions.cat.energy" },
+    { "id": "carbon",      "num": "02",  "color": "default", "titleKey": "solutions.carbon.title",      "descKey": "solutions.carbon.desc",      "categoryKey": "solutions.cat.carbon" },
+    { "id": "food",        "num": "03",  "color": "default", "titleKey": "solutions.food.title",        "descKey": "solutions.food.desc",        "categoryKey": "solutions.cat.food" },
+    { "id": "waste",       "num": "04",  "color": "default", "titleKey": "solutions.waste.title",       "descKey": "solutions.waste.desc",       "categoryKey": "solutions.cat.waste" },
+    { "id": "consumption", "num": "05",  "color": "default", "titleKey": "solutions.consumption.title", "descKey": "solutions.consumption.desc", "categoryKey": "solutions.cat.consumption" },
+    { "id": "policy",      "num": "06",  "color": "default", "titleKey": "solutions.policy.title",      "descKey": "solutions.policy.desc",      "categoryKey": "solutions.cat.policy" }
+  ]
+}

@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const lang = 'de';
+---
+<BaseLayout title="404 — Seite nicht gefunden" lang={lang} headerVariant="simple">
+  <div class="notfound">
+    <h1>404</h1>
+    <p>Die angeforderte Seite existiert nicht. / The requested page does not exist.</p>
+    <p>
+      <a class="btn-primary" href="/">Zur Startseite</a>
+      <a class="btn-ghost" href="/en/" style="margin-left:.75rem">Home</a>
+    </p>
+  </div>
+</BaseLayout>

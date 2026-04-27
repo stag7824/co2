@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "labelKey": "sources.noaa",      "href": "https://gml.noaa.gov/ccgg/trends/" },
+    { "labelKey": "sources.wmo",       "href": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level" },
+    { "labelKey": "sources.nasaCo2",   "href": "https://science.nasa.gov/resource/graphic-the-relentless-rise-of-carbon-dioxide/" },
+    { "labelKey": "sources.science",   "href": "https://www.science.org/doi/10.1126/science.adi5177" },
+    { "labelKey": "sources.pennState", "href": "https://www.e-education.psu.edu/meteo3/l10_p6.html" },
+    { "labelKey": "sources.nasaTemp",  "href": "https://climate.nasa.gov/vital-signs/global-temperature/" }
+  ]
+}

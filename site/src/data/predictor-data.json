@@ -1,0 +1,96 @@
+{
+  "items": [
+    {
+      "ppm": 280,
+      "temp": 0,
+      "yearKey": "predictor.year.preindustrial",
+      "color": "#3fbcaa",
+      "impacts": [
+        "predictor.impact.preindustrial.0",
+        "predictor.impact.preindustrial.1",
+        "predictor.impact.preindustrial.2",
+        "predictor.impact.preindustrial.3",
+        "predictor.impact.preindustrial.4"
+      ]
+    },
+    {
+      "ppm": 350,
+      "temp": 0.8,
+      "yearKey": "predictor.year.1990s",
+      "color": "#5aab6e",
+      "impacts": [
+        "predictor.impact.1990s.0",
+        "predictor.impact.1990s.1",
+        "predictor.impact.1990s.2",
+        "predictor.impact.1990s.3",
+        "predictor.impact.1990s.4"
+      ]
+    },
+    {
+      "ppm": 425,
+      "temp": 1.55,
+      "yearKey": "predictor.year.today",
+      "color": "#c9a84c",
+      "impacts": [
+        "predictor.impact.today.0",
+        "predictor.impact.today.1",
+        "predictor.impact.today.2",
+        "predictor.impact.today.3",
+        "predictor.impact.today.4"
+      ]
+    },
+    {
+      "ppm": 480,
+      "temp": 2.0,
+      "yearKey": "predictor.year.moderate",
+      "color": "#e8a045",
+      "impacts": [
+        "predictor.impact.moderate.0",
+        "predictor.impact.moderate.1",
+        "predictor.impact.moderate.2",
+        "predictor.impact.moderate.3",
+        "predictor.impact.moderate.4"
+      ]
+    },
+    {
+      "ppm": 560,
+      "temp": 3.0,
+      "yearKey": "predictor.year.bau",
+      "color": "#d45f5f",
+      "impacts": [
+        "predictor.impact.bau.0",
+        "predictor.impact.bau.1",
+        "predictor.impact.bau.2",
+        "predictor.impact.bau.3",
+        "predictor.impact.bau.4"
+      ]
+    },
+    {
+      "ppm": 700,
+      "temp": 5.0,
+      "yearKey": "predictor.year.unchecked",
+      "color": "#c04040",
+      "impacts": [
+        "predictor.impact.unchecked.0",
+        "predictor.impact.unchecked.1",
+        "predictor.impact.unchecked.2",
+        "predictor.impact.unchecked.3",
+        "predictor.impact.unchecked.4"
+      ]
+    },
+    {
+      "ppm": 850,
+      "temp": 6.5,
+      "yearKey": "predictor.year.extreme",
+      "color": "#9b3030",
+      "impacts": [
+        "predictor.impact.extreme.0",
+        "predictor.impact.extreme.1",
+        "predictor.impact.extreme.2",
+        "predictor.impact.extreme.3",
+        "predictor.impact.extreme.4"
+      ]
+    }
+  ],
+  "defaultIndex": 2
+}

@@ -1,0 +1,60 @@
+---
+import { t, tRaw, type Lang } from '../../i18n/index';
+import { NEWSLETTER } from '../../config';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const ringLabels = (tRaw<string[]>(lang, 'newsletter.ringLabels') ?? []) as string[];
+const providerEnabled = !!NEWSLETTER.providerUrl;
+---
+<section class="newsletter-section" id="join">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <div class="section-label">{t(lang, 'newsletter.label')}</div>
+        <h2 class="section-title reveal">
+          {t(lang, 'newsletter.title1')}<br /><em>{t(lang, 'newsletter.titleEm')}</em>
+        </h2>
+        <p class="section-body reveal reveal-delay-1">{t(lang, 'newsletter.body')}</p>
+
+        <form class="newsletter-form reveal reveal-delay-2" id="newsletter-form" novalidate>
+          <div class="form-row">
+            <input class="form-input" type="email" required id="email-input"
+                   placeholder={t(lang, 'newsletter.emailPlaceholder')}
+                   aria-label={t(lang, 'newsletter.emailPlaceholder')} />
+            <button class="form-submit" type="submit">{t(lang, 'newsletter.submit')}</button>
+          </div>
+          <label class="form-consent">
+            <input type="checkbox" required id="newsletter-consent" />
+            <span>{t(lang, 'newsletter.consent')}</span>
+          </label>
+          <div class="form-note" id="form-note">{t(lang, 'newsletter.noteRespect')}</div>
+          <div class="form-note" style="opacity:0.75">{t(lang, 'newsletter.notePlaceholder')}</div>
+        </form>
+      </div>
+
+      <div class="newsletter-visual" aria-hidden="true">
+        <div class="planet-ring">
+          <div class="planet-core">🌍</div>
+          {ringLabels[0] && (<div class="orbit-item" style="top:10px;left:50%;transform:translateX(-50%)">{ringLabels[0]}</div>)}
+          {ringLabels[1] && (<div class="orbit-item" style="bottom:10px;left:50%;transform:translateX(-50%)">{ringLabels[1]}</div>)}
+          {ringLabels[2] && (<div class="orbit-item" style="left:-20px;top:50%;transform:translateY(-50%)">{ringLabels[2]}</div>)}
+          {ringLabels[3] && (<div class="orbit-item" style="right:-20px;top:50%;transform:translateY(-50%)">{ringLabels[3]}</div>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ providerEnabled }}>
+  (function () {
+    var form = document.getElementById('newsletter-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      console.log('[newsletter] submit (TODO: not connected)', { providerEnabled: providerEnabled });
+      alert('TODO: not connected');
+    });
+  })();
+</script>

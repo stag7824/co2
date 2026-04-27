@@ -1,0 +1,51 @@
+---
+import { t, localePrefix, type Lang } from '../i18n/index';
+import { SITE, DISCORD_INVITE } from '../config';
+
+interface Props {
+  lang: Lang;
+  alternateUrls?: { de?: string; en?: string };
+  variant?: 'home' | 'simple';
+}
+
+const { lang, alternateUrls, variant = 'home' } = Astro.props;
+const prefix = localePrefix(lang);
+const otherLang: Lang = lang === 'de' ? 'en' : 'de';
+const otherHref = alternateUrls?.[otherLang] ?? `${localePrefix(otherLang)}/`;
+
+const homeHref = `${prefix}/`;
+
+const navItems: { href: string; key: string }[] = [
+  { href: `${prefix}/#science`,   key: 'nav.science' },
+  { href: `${prefix}/#charts`,    key: 'nav.data' },
+  { href: `${prefix}/#predictor`, key: 'nav.predictor' },
+  { href: `${prefix}/#solutions`, key: 'nav.solutions' },
+  { href: `${prefix}/#discord`,   key: 'nav.community' },
+];
+---
+<nav class="site-nav" aria-label="Primary">
+  <a class="nav-logo" href={homeHref}>
+    🌍 {SITE.name}
+    {variant === 'home' && <span>— {t(lang, 'site.tagline')}</span>}
+  </a>
+
+  {variant === 'home' && (
+    <ul class="nav-links">
+      {navItems.map((item) => (
+        <li><a href={item.href}>{t(lang, item.key)}</a></li>
+      ))}
+    </ul>
+  )}
+
+  <div class="nav-right">
+    {variant === 'home' && (
+      <a class="nav-cta" href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer">
+        {t(lang, 'nav.joinDiscord')}
+      </a>
+    )}
+    <a class="nav-lang" href={otherHref} hreflang={otherLang} rel="alternate"
+       aria-label={t(lang, 'nav.languageSwitch')}>
+      {otherLang.toUpperCase()}
+    </a>
+  </div>
+</nav>

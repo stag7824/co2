@@ -1,0 +1,18 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import data from '../../data/sources.json';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+type Src = { labelKey: string; href: string };
+const items = data.items as Src[];
+---
+<div class="sources-strip">
+  <div class="sources-inner">
+    <div class="sources-label">{t(lang, 'sources.label')}</div>
+    <div class="sources-list">
+      {items.map((s) => (
+        <a href={s.href} class="source-link" target="_blank" rel="noopener noreferrer">{t(lang, s.labelKey)}</a>
+      ))}
+    </div>
+  </div>
+</div>

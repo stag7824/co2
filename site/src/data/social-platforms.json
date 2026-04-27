@@ -1,0 +1,26 @@
+{
+  "platforms": [
+    { "label": "TikTok",       "href": "https://tiktok.com/@reduceco2now" },
+    { "label": "Instagram",    "href": "https://www.instagram.com/reduce.co2.now" },
+    { "label": "YouTube",      "href": "https://www.youtube.com/@ReduceCO2now-english" },
+    { "label": "LinkedIn",     "href": "https://www.linkedin.com/company/reduceco2now/" },
+    { "label": "X / Twitter",  "href": "https://x.com/reduceco2now_" },
+    { "label": "Facebook",     "href": "https://www.facebook.com/ReduceCO2Now" },
+    { "label": "Reddit",       "href": "https://www.reddit.com/r/ReduceCO2/" },
+    { "label": "WhatsApp",     "href": "https://whatsapp.com/channel/0029Vb5wDDV3mFYEhN2rBQ0T" },
+    { "label": "Truth Social", "href": "https://truthsocial.com/group/reduceco2now" },
+    { "label": "Discord",      "href": "https://discord.gg/J759vRuB" }
+  ],
+  "discordInvite": "https://discord.gg/J759vRuB",
+  "discordSubLinks": [
+    { "labelKey": "discord.subDrThomasTikTok", "href": "https://tiktok.com/@drthomasburo" },
+    { "labelKey": "discord.subYouTubeUpdates", "href": "https://www.youtube.com/@DrThomasBuro" },
+    { "labelKey": "discord.subProjectVideos",  "href": "https://youtube.com/playlist?list=PLtxi-yLRrcTmcfNtA2xYwmOHz7Ju3f06E" },
+    { "labelKey": "discord.subQuiz",            "href": "https://forms.gle/NA7VVFP8mkGymKwE7" }
+  ],
+  "footerLinks": [
+    { "labelKey": "footer.mission", "href": "https://www.reddit.com/r/ReduceCO2/comments/1m74slq/our_mission_treat_climate_change_like_a_system/" },
+    { "labelKey": "footer.discord", "href": "https://discord.gg/J759vRuB" },
+    { "labelKey": "footer.quiz",    "href": "https://forms.gle/NA7VVFP8mkGymKwE7" }
+  ]
+}

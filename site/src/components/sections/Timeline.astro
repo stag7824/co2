@@ -1,0 +1,46 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import { TimelineViz } from '../islands/TimelineViz';
+import tlData from '../../data/timeline-data.json';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+type Item = {
+  id: string; ppm: string; eraKey: string; titleKey: string; descKey: string;
+  dot: string; badgeKey: string; shortKey: string;
+};
+const items = (tlData.items as Item[]).map((it) => ({
+  id: it.id,
+  ppm: it.ppm,
+  dot: it.dot,
+  era: t(lang, it.eraKey),
+  title: t(lang, it.titleKey),
+  desc: t(lang, it.descKey),
+  badge: t(lang, it.badgeKey),
+  short: t(lang, it.shortKey),
+}));
+
+type Marker = { i: number; x: number; ppm: number; color: string; labelKey: string };
+const markers = (tlData.sparklineMarkers as Marker[]).map((m) => ({
+  i: m.i, x: m.x, ppm: m.ppm, color: m.color,
+  label: t(lang, m.labelKey),
+}));
+
+const header = t(lang, 'history.header');
+---
+<section class="timeline-section" id="history">
+  <div class="container">
+    <div class="section-label">{t(lang, 'history.label')}</div>
+    <h2 class="section-title reveal">
+      {t(lang, 'history.title1')} <em>{t(lang, 'history.titleEm')}</em>
+    </h2>
+    <p class="section-body reveal reveal-delay-1">{t(lang, 'history.body')}</p>
+    <TimelineViz client:load
+      items={items}
+      defaultIndex={tlData.defaultIndex}
+      sparklinePoints={tlData.sparklinePoints as [number, number][]}
+      markers={markers}
+      header={header} />
+  </div>
+</section>

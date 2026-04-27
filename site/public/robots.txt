@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reduceco2now.com/sitemap-index.xml

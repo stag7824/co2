@@ -1,0 +1,278 @@
+{
+  "site": {
+    "title": "ReduceCO2Now",
+    "tagline": "Klimaschutz, gestützt auf Wissenschaft — getragen von Menschen.",
+    "description": "ReduceCO2Now — eine globale Bewegung zur Stabilisierung des Erdklimas. Wissenschaftlich fundiert. Jetzt mitmachen.",
+    "defaultDescription": "ReduceCO2Now — Initiative zur Reduktion von CO₂-Emissionen. Mitmachen, informieren, handeln."
+  },
+  "nav": {
+    "science": "Wissenschaft",
+    "data": "Daten",
+    "predictor": "Prognose",
+    "solutions": "Lösungen",
+    "community": "Community",
+    "joinDiscord": "Discord beitreten",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "languageSwitch": "Sprache wechseln",
+    "skipToContent": "Zum Inhalt springen",
+    "home": "Start"
+  },
+  "lang": { "switch": "Sprache wechseln" },
+  "hero": {
+    "eyebrow": "Klima-Aktionsnetzwerk",
+    "title1": "Reduce",
+    "title2": "CO₂",
+    "title3": "Now",
+    "subtitle": "Eine klare Warnung — und ein Weg zu Lösungen. Die Wissenschaft ist eindeutig. Die Zeit ist jetzt.",
+    "ppmLabel": "Atmosphärisches CO₂ — höchster Stand seit 14 Mio. Jahren",
+    "ppmContext": "800 000 Jahre lang stabil unter 300 ppm · Der Anstieg ist menschgemacht",
+    "ctaPrimary": "Unserer Community beitreten",
+    "ctaSecondary": "Daten erkunden"
+  },
+  "science": {
+    "label": "Die Zahlen",
+    "title1": "Die Warnsignale sind",
+    "titleEm": "unmissverständlich",
+    "body": "Jeder zentrale Klimaindikator entwickelt sich in die falsche Richtung — gemessen, nicht prognostiziert.",
+    "tag.warning": "⚠ Rekordhoch",
+    "tag.critical2024": "🔴 Rekord 2024",
+    "tag.iceCore": "📊 Eisbohrkerndaten",
+    "tag.deepTime": "🔴 Tiefenzeit",
+    "tag.highEnd": "⚠ Worst-Case-Szenario",
+    "tag.paleo": "🧊 Paläoklima"
+  },
+  "charts": {
+    "label": "Interaktive Daten",
+    "title1": "Die CO₂-Aufzeichnung —",
+    "titleEm": "Vergangenheit & Zukunft",
+    "body": "Historische Daten aus Eisbohrkernen und Direktmessungen. Zukunftsszenarien basieren auf aktuellen Emissionspfaden.",
+    "industrialTitle": "Industrielle Ära CO₂ & Zukunftsszenarien (1750–2100)",
+    "industrialSubtitle": "Historische Messungen aus Eisbohrkernen + Mauna-Loa-Observatorium. Projektionen nach IPCC-Emissionspfaden.",
+    "iceCoreTitle": "800 000 Jahre CO₂ — Der Tiefenzeit-Blick",
+    "iceCoreSubtitle": "Eisbohrkerndaten aus Vostok & EPICA (Antarktis). Der heutige Wert liegt weit außerhalb des natürlichen Bereichs.",
+    "legendHistorical": "Historisch (Eisbohrkerne + Mauna Loa)",
+    "legendNote": "Über die Grafik bewegen, um Werte zu sehen · Legende klicken zum Ein-/Ausblenden",
+    "legendHidden": "(ausgeblendet)",
+    "now": "▼ Jetzt",
+    "axisLabel": "CO₂ (ppm)",
+    "naturalRange": "Natürlicher Bereich: 170–300 ppm",
+    "industrialSpike": "⚠ Industrieller Anstieg →",
+    "scenario.bau": "Weiter wie bisher",
+    "scenario.moderate": "Moderate Maßnahmen",
+    "scenario.strong": "Starke Maßnahmen (Paris ~1,5 °C)",
+    "ref.preindustrial": "300 ppm — vorindustrielle Obergrenze",
+    "ref.today": "425 ppm — heute",
+    "ref.double": "560 ppm — Verdoppelung CO₂ (~3 °C)"
+  },
+  "predictor": {
+    "label": "Szenarien erkunden",
+    "title1": "CO₂-",
+    "titleEm": "Auswirkungs-Prognose",
+    "body": "Ziehe den Regler, um zu erkunden, was unterschiedliche CO₂-Konzentrationen für Temperatur und Leben auf der Erde bedeuten.",
+    "estTempRise": "Geschätzter Temperaturanstieg",
+    "abovePreindustrial": "über vorindustriellem Niveau",
+    "at": "Bei",
+    "globalTempRise": "globaler Temperaturanstieg",
+    "approxTimeline": "📅 Ungefährer Zeitraum:",
+    "footnote": "Basiert auf Gleichgewichts-Klimasensitivität (~3 °C pro CO₂-Verdoppelung, IPCC AR6). Tatsächliche Erwärmung hängt von Emissionspfaden und Rückkopplungen ab."
+  },
+  "history": {
+    "label": "Tiefenzeit-Perspektive",
+    "title1": "Was uns die Geschichte",
+    "titleEm": "lehrt",
+    "body": "Die Klimaaufzeichnung der Erde umfasst Millionen Jahre. CO₂ war stets der entscheidende Hebel. Wir treiben es schneller hoch als alles andere im geologischen Rekord.",
+    "header": "CO₂ im Lauf der Zeit — Punkt anklicken zum Erkunden"
+  },
+  "warning": {
+    "label": "Folgen",
+    "title1": "Wir betreten Bedingungen,",
+    "titleEm": "die keine Zivilisation je erlebt hat",
+    "bannerTitle1": "Das Klima",
+    "bannerTitleEm": "reagiert bereits",
+    "bannerDesc": "Das sind keine fernen Prognosen. Der Klimawandel verändert Wettersysteme, Meeresströmungen, Anbauzonen und bewohnbare Flächen — schon jetzt. Jeder Bruchteil eines Grades verstärkt diese Effekte."
+  },
+  "solutions": {
+    "label": "Was wir tun können",
+    "title1": "Lösungen, die",
+    "titleEm": "funktionieren",
+    "body": "Eine Stabilisierung von CO₂ ist möglich — sie erfordert jedoch koordiniertes Handeln im großen Maßstab. Das sind erprobte Hebel. Wir können sie alle gleichzeitig betätigen."
+  },
+  "discord": {
+    "title1": "Mach mit.",
+    "titleEm": "Drehen wir den Klimawandel um.",
+    "desc": "Triff uns in unseren täglichen Treffen auf Discord. Vernetze dich mit Wissenschaftlerinnen, Aktivisten und engagierten Menschen aus aller Welt. Erfahre alles über das Projekt, kommende Veranstaltungen und wie du wirklich etwas bewegen kannst.",
+    "feat.daily": "Tägliche Meetings",
+    "feat.languages": "25+ Sprachen",
+    "feat.science": "Wissenschaftlich fundiert",
+    "feat.action": "Echte Aktion",
+    "feat.network": "Globales Netzwerk",
+    "cta": "Tritt unserem Discord bei",
+    "subDrThomasTikTok": "📱 Dr. Thomas Buro auf TikTok",
+    "subYouTubeUpdates": "▶ YouTube-Updates",
+    "subProjectVideos": "🎬 Wie das Projekt funktioniert",
+    "subQuiz": "🧠 Klima-Wissensquiz"
+  },
+  "newsletter": {
+    "label": "Newsletter",
+    "title1": "Bleib informiert,",
+    "titleEm": "werde aktiv",
+    "body": "Abonniere für wissenschaftlich fundierte Fakten, globale Lösungen und konkrete Handlungsmöglichkeiten — direkt in dein Postfach.",
+    "emailPlaceholder": "deine@email.com",
+    "submit": "Jetzt anmelden",
+    "consent": "Ich willige ein, dass meine E-Mail-Adresse zum Versand des Newsletters verarbeitet wird. Die Einwilligung kann ich jederzeit widerrufen.",
+    "noteRespect": "Wir respektieren deine Privatsphäre. Abmeldung jederzeit möglich.",
+    "notePlaceholder": "Hinweis: Dieses Formular ist derzeit ein Platzhalter und versendet noch keine Nachrichten.",
+    "ringLabels": ["25+ Sprachen", "Globale Bewegung", "Wissenschaft", "Aktion"]
+  },
+  "community": {
+    "label": "Globale Community",
+    "title1": "Folge uns",
+    "titleEm": "überall",
+    "body": "Unsere Bewegung umfasst über 25 Sprachen. Finde deine Community auf deiner Plattform.",
+    "languagesLabel": "Verfügbar in 25+ Sprachen"
+  },
+  "sources": {
+    "label": "Datenquellen"
+  },
+  "footer": {
+    "tagline": "Eine globale Bewegung zur Stabilisierung des Erdklimas — wissenschaftlich fundiert, getragen von Menschen.",
+    "mission": "Unsere Mission",
+    "discord": "Discord-Community",
+    "quiz": "Klima-Quiz",
+    "rights": "Alle Rechte vorbehalten.",
+    "legal": "Rechtliches",
+    "follow": "Folge uns"
+  },
+  "common": {
+    "todoBadge": "BITTE AUSFÜLLEN"
+  },
+  "data": {
+    "co2Today":      { "title": "Atmosphärisches CO₂ heute", "desc": "800 000 Jahre lang stabil unter 300 ppm. Der menschgemachte Anstieg ist beispiellos in der Erdgeschichte." },
+    "tempRise":      { "title": "Über vorindustriellem Niveau", "desc": "2024 war das wärmste je gemessene Jahr. Ozeane speichern Wärme — was wir jetzt sehen, ist erst der Anfang." },
+    "stableClimate": { "title": "Stabiles Klima — jetzt vorbei", "desc": "Eisbohrkerne zeigen: CO₂ schwankte über Dutzende Eiszeitzyklen zwischen 170 und 300 ppm — bis zur Industrialisierung." },
+    "co2History":    { "title": "Seit CO₂ so hoch war", "desc": "Als CO₂ zuletzt heutige Werte erreichte, war die Erde 4 °C wärmer — kein Polareis, deutlich höhere Meeresspiegel." },
+    "warming2100":   { "title": "Erwärmung bei 800 ppm bis 2100", "desc": "Ein Klima, wie es seit 34 Mio. Jahren nicht mehr existiert. Unbegrenzter Verbrauch fossiler Brennstoffe könnte Bedingungen wie vor 50 Mio. Jahren wiederherstellen." },
+    "co2IceAges":    { "title": "CO₂ während der Eiszeiten", "desc": "In Eiszeiten fiel CO₂ auf ~170 ppm und Temperaturen sanken um 10 °C. CO₂ ist der primäre Temperaturregler des Planeten." }
+  },
+  "ticker": {
+    "co2Today":     "Atmosphärisches CO₂ heute — Rekordhoch",
+    "tempRise":     "Über vorindustriell — Rekord 2024",
+    "hottestYear":  "Wärmstes je gemessenes Jahr",
+    "stable":       "CO₂ war stabil unter 300 ppm",
+    "lastTime":     "Seit CO₂ so hoch war",
+    "warming2100":  "Mögliche Erwärmung bis 2100 bei 800 ppm",
+    "foodWasted":   "Aller produzierten Lebensmittel werden weggeworfen",
+    "languages":    "Sprachen in unserer Community",
+    "iceAges":      "CO₂ während der Eiszeiten (10 °C kälter)",
+    "sensitivity":  "Pro CO₂-Verdoppelung (Klimasensitivität)"
+  },
+  "consequences": {
+    "seaLevels":      "Steigende Meeresspiegel",
+    "heatwaves":      "Extreme Hitzewellen",
+    "storms":         "Verstärkte Stürme",
+    "droughts":       "Ausweitende Dürren",
+    "floods":         "Katastrophale Überflutungen",
+    "iceSheets":      "Schmelzende Eisschilde",
+    "ecosystems":     "Zusammenbruch von Ökosystemen",
+    "acidification":  "Ozeanversauerung",
+    "foodInsecurity": "Ernährungsunsicherheit",
+    "waterScarcity":  "Wasserknappheit"
+  },
+  "solutions": {
+    "label": "Was wir tun können",
+    "title1": "Lösungen, die",
+    "titleEm": "funktionieren",
+    "body": "Eine Stabilisierung von CO₂ ist möglich — sie erfordert jedoch koordiniertes Handeln im großen Maßstab. Das sind erprobte Hebel. Wir können sie alle gleichzeitig betätigen.",
+    "cat":         { "energy":"Energie", "carbon":"Kohlenstoff", "food":"Ernährung", "waste":"Abfall", "consumption":"Konsum", "policy":"Politik" },
+    "energy":      { "title":"Fossile Brennstoffe reduzieren",       "desc":"Umstieg auf Erneuerbare, höhere CO₂-Bepreisung und ein Ende der Subventionen für Öl, Gas und Kohle. Der größte verfügbare Hebel." },
+    "carbon":      { "title":"Biomasse vergraben & CO₂ binden",       "desc":"Pflanzenkohle, beschleunigte Verwitterung und Direct-Air-Capture können bereits emittiertes CO₂ aktiv aus der Atmosphäre entfernen — nicht nur neue Emissionen verlangsamen." },
+    "food":        { "title":"CO₂-optimiert essen",                    "desc":"Lebensmittel verursachen ~25 % der globalen Emissionen. Pflanzenbetonte Ernährung und regionale Produkte machen einen messbaren Unterschied." },
+    "waste":       { "title":"Lebensmittelverschwendung reduzieren", "desc":"~1/3 aller weltweit produzierten Lebensmittel wird verschwendet — ein riesiger versteckter CO₂-Fußabdruck. Das zu vermeiden wirkt sofort und stark." },
+    "consumption": { "title":"Überkonsum verringern",                 "desc":"Herstellung, Transport und Entsorgung von Gütern verursachen erhebliche Emissionen. Weniger kaufen, klüger kaufen, Produkte länger nutzen — alles hilft." },
+    "policy":      { "title":"CO₂-Bepreisung & Politik",               "desc":"Fossile Brennstoffe müssen ihre wahren Kosten widerspiegeln. CO₂-Steuern und Cap-and-Trade-Systeme haben bewiesen, dass sie Emissionen wirksam senken." }
+  },
+  "predictor": {
+    "label": "Szenarien erkunden",
+    "title1": "CO₂-",
+    "titleEm": "Auswirkungs-Prognose",
+    "body": "Ziehe den Regler, um zu erkunden, was unterschiedliche CO₂-Konzentrationen für Temperatur und Leben auf der Erde bedeuten.",
+    "estTempRise": "Geschätzter Temperaturanstieg",
+    "abovePreindustrial": "über vorindustriellem Niveau",
+    "at": "Bei",
+    "globalTempRise": "globaler Temperaturanstieg",
+    "approxTimeline": "📅 Ungefährer Zeitraum:",
+    "footnote": "Basiert auf Gleichgewichts-Klimasensitivität (~3 °C pro CO₂-Verdoppelung, IPCC AR6). Tatsächliche Erwärmung hängt von Emissionspfaden und Rückkopplungen ab.",
+    "year": {
+      "preindustrial":"Vorindustriell (1750)",
+      "1990s":"~1990er",
+      "today":"Heute (2025)",
+      "moderate":"~2040–2050 moderates Szenario",
+      "bau":"~2070–2080 Weiter-wie-bisher",
+      "unchecked":"~2100 ungebremste Emissionen",
+      "extreme":"Nach 2100 — extremes Szenario"
+    },
+    "impact": {
+      "preindustrial": ["Erde im natürlichen Klimagleichgewicht","Stabile Anbauzonen weltweit","Normaler pH-Wert und Zirkulation der Ozeane","Niedriger Meeresspiegel — stabile Küsten","Kein beschleunigter Artenverlust"],
+      "1990s":         ["Leichte Erwärmung bereits im Gang","Arktis erwärmt sich schneller als globaler Schnitt","Korallenriffe beginnen auszubleichen","Meeresspiegelanstieg beschleunigt sich","Extremwetter häufiger"],
+      "today":         ["2024 wärmstes je gemessenes Jahr","Schwere Korallenbleiche-Ereignisse","Schmelze in Grönland und Antarktis beschleunigt","1 Mrd. Menschen mit höherem Hochwasserrisiko","38 Mrd. $ jährliche Schäden durch Extreme"],
+      "moderate":      ["Pariser Obergrenze überschritten","Korallenriffe funktional ausgestorben (99 % Verlust)","Extreme Hitze trifft jährlich Milliarden","Massive Ernteverluste in den Tropen","100 Mio. Menschen mit Wasserknappheit"],
+      "bau":           ["3–4 m Meeresspiegelanstieg unausweichlich","50 % der Arten vom Aussterben bedroht","Sahara-ähnliche Bedingungen im Mittelmeerraum","Jährliche Hitzeextreme als Norm","Massive Störungen globaler Nahrungssysteme"],
+      "unchecked":     ["Eisschilde irreversibel im Zerfall","7–10 m Meeresspiegelanstieg über Jahrhunderte","Tropen weitgehend unbewohnbar","Massenmigration in Milliardenhöhe","Risiko des globalen Nahrungssystems-Kollaps"],
+      "extreme":       ["Klima wie seit 34 Mio. Jahren nicht","Nahezu vollständiger Verlust des Polareises","Meeresspiegel langfristig 20–40 m über heute","Massensterben im Gange","Zivilisatorische Disruption"]
+    }
+  },
+  "timeline": {
+    "era": {
+      "natural":"Vor 800 000–10 000 Jahren",
+      "miocene":"Vor 14 Mio. Jahren — Miozän",
+      "industrial":"1750–1950 — Industrielle Revolution",
+      "accel":"1960–2000 — Beschleunigung",
+      "now":"2025 — Jetzt"
+    },
+    "title": {
+      "natural":"Natürliche Eiszeitzyklen",
+      "miocene":"Letztes Mal so hoch",
+      "ignition":"Die Kohlenstoff-Zündung",
+      "accel":"Die große Beschleunigung",
+      "now":"Unbekanntes Klima-Territorium"
+    },
+    "desc": {
+      "natural":"CO₂ schwankte 800 000 Jahre lang im Takt der Erdumlaufzyklen natürlich zwischen 180 und 300 ppm. Eiszeiten ließen Temperaturen um 10 °C fallen; warme Zwischeneiszeiten erreichten ~280 ppm. Es gab keine menschliche Zivilisation.",
+      "miocene":"Die Erde war global 4 °C wärmer. Keine Polkappen wie heute. Meeresspiegel 20–40 m höher. Die Kontinente sahen ähnlich aus, doch das Klima war radikal anders — keine Menschen, keine modernen Ökosysteme.",
+      "ignition":"Kohle, dann Öl und Gas setzten Kohlenstoff frei, der über Millionen Jahre eingelagert war. CO₂ stieg zunächst langsam. Bis 1950 wurden 310 ppm überschritten — noch im Bereich natürlicher Variabilität, aber die Bahn war eingeschlagen.",
+      "accel":"Die Keeling-Kurve zeigt seit 1958 einen unverkennbaren Anstieg. Globales BIP-Wachstum, Bevölkerungsexplosion und Abhängigkeit von fossilen Brennstoffen verstärken sich. Jedes Jahrzehnt fügt mehr CO₂ hinzu als das vorherige.",
+      "now":"Wir haben die 1,5-°C-Schwelle überschritten. Der Anstieg ist 100× schneller als jeder natürliche Übergang im geologischen Rekord. Als die Erde zuletzt diese CO₂-Werte sah, gab es keine Menschen. Wir sind das Experiment."
+    },
+    "badge": {
+      "natural":"Stabiler Naturbereich",
+      "miocene":"Tiefenzeit-Signal",
+      "ignition":"Der Startschuss",
+      "accel":"Beschleunigung",
+      "now":"⚠ Wir sind hier"
+    },
+    "short": {
+      "natural":"Natürliche Zyklen…",
+      "miocene":"Letztes Mal so…",
+      "ignition":"Kohlenstoff-Zündung…",
+      "accel":"Große Beschleunigung…",
+      "now":"Unbekanntes Klima…"
+    },
+    "spark": {
+      "0":"−800k Jahre",
+      "1":"vor 14 Mio.",
+      "2":"1750",
+      "3":"1980",
+      "4":"jetzt"
+    }
+  },
+  "sources": {
+    "label": "Datenquellen",
+    "noaa":      "→ NOAA Mauna Loa CO₂",
+    "wmo":       "→ WMO Temperaturrekord 2024",
+    "nasaCo2":   "→ NASA CO₂-Geschichte",
+    "science":   "→ Science.org Tiefenklima",
+    "pennState": "→ Penn State Eisbohrkern-Daten",
+    "nasaTemp":  "→ NASA Temperatur-Aufzeichnung"
+  }
+}

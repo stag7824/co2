@@ -1,0 +1,45 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import { CO2Chart, IceCoreChart } from '../islands/CO2Chart';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const industrialLabels = {
+  title: t(lang, 'charts.industrialTitle'),
+  subtitle: t(lang, 'charts.industrialSubtitle'),
+  legendHistorical: t(lang, 'charts.legendHistorical'),
+  legendNote: t(lang, 'charts.legendNote'),
+  legendHidden: t(lang, 'charts.legendHidden'),
+  axisLabel: t(lang, 'charts.axisLabel'),
+  now: t(lang, 'charts.now'),
+  scenarioBau: t(lang, 'charts.scenario.bau'),
+  scenarioModerate: t(lang, 'charts.scenario.moderate'),
+  scenarioStrong: t(lang, 'charts.scenario.strong'),
+  refPreindustrial: t(lang, 'charts.ref.preindustrial'),
+  refToday: t(lang, 'charts.ref.today'),
+  refDouble: t(lang, 'charts.ref.double'),
+};
+const iceLabels = {
+  title: t(lang, 'charts.iceCoreTitle'),
+  subtitle: t(lang, 'charts.iceCoreSubtitle'),
+  naturalRange: t(lang, 'charts.naturalRange'),
+  industrialSpike: t(lang, 'charts.industrialSpike'),
+};
+---
+<section class="chart-section" id="charts">
+  <div class="container">
+    <div class="section-label">{t(lang, 'charts.label')}</div>
+    <h2 class="section-title reveal">
+      {t(lang, 'charts.title1')} <em>{t(lang, 'charts.titleEm')}</em>
+    </h2>
+    <p class="section-body reveal reveal-delay-1">{t(lang, 'charts.body')}</p>
+
+    <CO2Chart client:load labels={industrialLabels} />
+
+    <div class="chart-wrap" style="margin-top:1.5rem;">
+      <div class="chart-title">{iceLabels.title}</div>
+      <div class="chart-subtitle">{iceLabels.subtitle}</div>
+      <IceCoreChart client:load labels={iceLabels} />
+    </div>
+  </div>
+</section>

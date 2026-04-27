@@ -1,0 +1,26 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import data from '../../data/community-languages.json';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+type Link = { label: string; href: string };
+type Language = { name: string; links: Link[] };
+const languages = data.languages as Language[];
+---
+<section class="social-section" id="languages" style="padding-top:0;">
+  <div class="container">
+    <div class="section-label" style="margin-bottom:1.5rem;">{t(lang, 'community.languagesLabel')}</div>
+    <div class="languages-grid reveal">
+      {languages.map((l) => (
+        <div class="lang-card">
+          <div class="lang-name">{l.name}</div>
+          <div class="lang-links">
+            {l.links.map((lk) => (
+              <a href={lk.href} class="lang-link" target="_blank" rel="noopener noreferrer">{lk.label}</a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+---
+import type { Lang } from '../i18n/index';
+import Hero from './sections/Hero.astro';
+import StatsTicker from './sections/StatsTicker.astro';
+import DataCards from './sections/DataCards.astro';
+import Charts from './sections/Charts.astro';
+import Predictor from './sections/Predictor.astro';
+import Timeline from './sections/Timeline.astro';
+import Warning from './sections/Warning.astro';
+import Solutions from './sections/Solutions.astro';
+import DiscordCTA from './sections/DiscordCTA.astro';
+import Newsletter from './sections/Newsletter.astro';
+import SocialPlatforms from './sections/SocialPlatforms.astro';
+import LanguagesGrid from './sections/LanguagesGrid.astro';
+import Sources from './sections/Sources.astro';
+import RevealObserver from './sections/RevealObserver.astro';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+---
+<Hero lang={lang} />
+<StatsTicker lang={lang} />
+<DataCards lang={lang} />
+<Charts lang={lang} />
+<Predictor lang={lang} />
+<Timeline lang={lang} />
+<Warning lang={lang} />
+<Solutions lang={lang} />
+<DiscordCTA lang={lang} />
+<Newsletter lang={lang} />
+<SocialPlatforms lang={lang} />
+<LanguagesGrid lang={lang} />
+<Sources lang={lang} />
+<RevealObserver />

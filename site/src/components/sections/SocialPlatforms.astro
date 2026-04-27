@@ -1,0 +1,23 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import data from '../../data/social-platforms.json';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+type Platform = { label: string; href: string };
+const platforms = data.platforms as Platform[];
+---
+<section class="social-section" id="community">
+  <div class="container">
+    <div class="section-label">{t(lang, 'community.label')}</div>
+    <h2 class="section-title reveal">
+      {t(lang, 'community.title1')} <em>{t(lang, 'community.titleEm')}</em>
+    </h2>
+    <p class="section-body reveal reveal-delay-1">{t(lang, 'community.body')}</p>
+    <div class="social-grid reveal reveal-delay-2">
+      {platforms.map((p) => (
+        <a href={p.href} class="social-pill" target="_blank" rel="noopener noreferrer">{p.label}</a>
+      ))}
+    </div>
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,278 @@
+{
+  "site": {
+    "title": "ReduceCO2Now",
+    "tagline": "Climate action, grounded in science — driven by people.",
+    "description": "ReduceCO2Now — a global movement to stabilize Earth's climate. Science-based. Join now.",
+    "defaultDescription": "ReduceCO2Now — an initiative to reduce CO₂ emissions. Join, learn, take action."
+  },
+  "nav": {
+    "science": "Science",
+    "data": "Data",
+    "predictor": "Predictor",
+    "solutions": "Solutions",
+    "community": "Community",
+    "joinDiscord": "Join Discord",
+    "imprint": "Legal Notice",
+    "privacy": "Privacy",
+    "languageSwitch": "Change language",
+    "skipToContent": "Skip to content",
+    "home": "Home"
+  },
+  "lang": { "switch": "Change language" },
+  "hero": {
+    "eyebrow": "Climate Action Network",
+    "title1": "Reduce",
+    "title2": "CO₂",
+    "title3": "Now",
+    "subtitle": "A clear warning — and a path to solutions. The science is urgent. The time is now.",
+    "ppmLabel": "Atmospheric CO₂ — Highest in 14 Million Years",
+    "ppmContext": "Stable below 300 ppm for 800,000 years · The spike is human-made",
+    "ctaPrimary": "Join Our Community",
+    "ctaSecondary": "Explore the Data"
+  },
+  "science": {
+    "label": "The Numbers",
+    "title1": "The Warning Signals Are",
+    "titleEm": "Unmistakable",
+    "body": "Every major climate indicator is moving in the wrong direction — measured, not projected.",
+    "tag.warning": "⚠ Record high",
+    "tag.critical2024": "🔴 2024 Record",
+    "tag.iceCore": "📊 Ice core data",
+    "tag.deepTime": "🔴 Deep time",
+    "tag.highEnd": "⚠ High-end scenario",
+    "tag.paleo": "🧊 Paleoclimate"
+  },
+  "charts": {
+    "label": "Interactive Data",
+    "title1": "The CO₂ Record —",
+    "titleEm": "Past & Future",
+    "body": "Historical data from ice cores and direct measurement. Future scenarios based on current emission trajectories.",
+    "industrialTitle": "Industrial Era CO₂ & Future Scenarios (1750–2100)",
+    "industrialSubtitle": "Historical measurements from ice cores + Mauna Loa Observatory. Projections based on IPCC emission pathways.",
+    "iceCoreTitle": "800,000 Years of CO₂ — The Deep Time View",
+    "iceCoreSubtitle": "Ice core data from Vostok & EPICA (Antarctica). Today's level is off the natural range by a wide margin.",
+    "legendHistorical": "Historical (ice cores + Mauna Loa)",
+    "legendNote": "Hover chart to see values · Click legend to toggle",
+    "legendHidden": "(hidden)",
+    "now": "▼ Now",
+    "axisLabel": "CO₂ (ppm)",
+    "naturalRange": "Natural range: 170–300 ppm",
+    "industrialSpike": "⚠ Industrial spike →",
+    "scenario.bau": "Business as Usual",
+    "scenario.moderate": "Moderate Action",
+    "scenario.strong": "Strong Action (Paris ~1.5°C)",
+    "ref.preindustrial": "300 ppm — Pre-industrial ceiling",
+    "ref.today": "425 ppm — Today",
+    "ref.double": "560 ppm — Double CO₂ (~3°C)"
+  },
+  "predictor": {
+    "label": "Explore Scenarios",
+    "title1": "CO₂",
+    "titleEm": "Impact Predictor",
+    "body": "Drag the slider to explore what different CO₂ concentration levels mean for temperature and life on Earth.",
+    "estTempRise": "Estimated Temperature Rise",
+    "abovePreindustrial": "above pre-industrial",
+    "at": "At",
+    "globalTempRise": "global temperature rise",
+    "approxTimeline": "📅 Approximate timeline:",
+    "footnote": "Based on equilibrium climate sensitivity (~3°C per CO₂ doubling, IPCC AR6). Real warming depends on emission trajectories and feedbacks."
+  },
+  "history": {
+    "label": "Deep Time Perspective",
+    "title1": "What History",
+    "titleEm": "Tells Us",
+    "body": "Earth's climate record spans millions of years. CO₂ has always been the primary lever. We're pushing it faster than anything in the geological record.",
+    "header": "CO₂ Through Time — Click a Point to Explore"
+  },
+  "warning": {
+    "label": "Consequences",
+    "title1": "We're Entering Conditions",
+    "titleEm": "No Civilization Has Faced",
+    "bannerTitle1": "The Climate is Already",
+    "bannerTitleEm": "Responding",
+    "bannerDesc": "These aren't distant projections. Climate change is reshaping weather systems, ocean currents, agricultural zones, and habitable land right now. Every fraction of a degree amplifies these effects."
+  },
+  "solutions": {
+    "label": "What We Can Do",
+    "title1": "Solutions That",
+    "titleEm": "Work",
+    "body": "Stabilizing CO₂ is possible — but requires coordinated action at scale. These are proven levers. We can pull all of them simultaneously."
+  },
+  "discord": {
+    "title1": "Join Us.",
+    "titleEm": "Turn Climate Change Around.",
+    "desc": "Meet us in our daily meetings on Discord. Connect with scientists, activists, and concerned citizens from around the world. Find out all about the project, events, and how you can make a real difference.",
+    "feat.daily": "Daily Meetings",
+    "feat.languages": "25+ Languages",
+    "feat.science": "Science-Based",
+    "feat.action": "Real Action",
+    "feat.network": "Global Network",
+    "cta": "Join Our Discord Server",
+    "subDrThomasTikTok": "📱 Dr. Thomas Buro on TikTok",
+    "subYouTubeUpdates": "▶ YouTube Updates",
+    "subProjectVideos": "🎬 How the Project Works",
+    "subQuiz": "🧠 Climate Knowledge Quiz"
+  },
+  "newsletter": {
+    "label": "Newsletter",
+    "title1": "Stay Informed,",
+    "titleEm": "Take Action",
+    "body": "Subscribe for science-based facts, global solutions, and action opportunities delivered to your inbox.",
+    "emailPlaceholder": "your@email.com",
+    "submit": "Sign up now",
+    "consent": "I consent to my email address being processed for the purpose of sending the newsletter. Consent may be withdrawn at any time.",
+    "noteRespect": "We respect your privacy. Unsubscribe anytime.",
+    "notePlaceholder": "Note: this form is currently a placeholder and does not yet send messages.",
+    "ringLabels": ["25+ Languages", "Global Movement", "Science", "Action"]
+  },
+  "community": {
+    "label": "Global Community",
+    "title1": "Follow Us",
+    "titleEm": "Everywhere",
+    "body": "Our movement spans 25+ languages. Find your community on your platform.",
+    "languagesLabel": "Available in 25+ Languages"
+  },
+  "sources": {
+    "label": "Data Sources"
+  },
+  "footer": {
+    "tagline": "A global movement to stabilize Earth's climate — grounded in science, driven by people.",
+    "mission": "Our Mission",
+    "discord": "Discord Community",
+    "quiz": "Climate Quiz",
+    "rights": "All rights reserved.",
+    "legal": "Legal",
+    "follow": "Follow us"
+  },
+  "common": {
+    "todoBadge": "TO BE FILLED"
+  },
+  "data": {
+    "co2Today":      { "title": "Atmospheric CO₂ Today", "desc": "Stable below 300 ppm for 800,000 years. The human-driven spike is unprecedented in geological history." },
+    "tempRise":      { "title": "Above Pre-Industrial Levels", "desc": "2024 was the hottest year ever recorded. Oceans store heat — what we see now is only the beginning." },
+    "stableClimate": { "title": "Of Stable Climate, Now Gone", "desc": "Ice core data shows CO₂ oscillated between 170–300 ppm through dozens of ice age cycles — until the industrial era." },
+    "co2History":    { "title": "Since CO₂ Was This High", "desc": "The last time CO₂ reached today's levels, Earth was 4°C hotter — no polar ice, sea levels dramatically higher." },
+    "warming2100":   { "title": "Warming at 800 ppm by 2100", "desc": "A climate not seen in 34 million years. Unlimited fossil fuel use could recreate conditions from 50 million years ago." },
+    "co2IceAges":    { "title": "CO₂ During Ice Ages", "desc": "Ice ages saw CO₂ fall to ~170 ppm and temperatures drop 10°C. CO₂ is the planet's primary temperature dial." }
+  },
+  "ticker": {
+    "co2Today":     "Atmospheric CO₂ today — record high",
+    "tempRise":     "Above pre-industrial — 2024 record",
+    "hottestYear":  "Hottest year ever recorded",
+    "stable":       "CO₂ was stable below 300 ppm",
+    "lastTime":     "Since CO₂ was last this high",
+    "warming2100":  "Potential warming by 2100 at 800 ppm",
+    "foodWasted":   "Of all food produced is wasted",
+    "languages":    "Languages in our community",
+    "iceAges":      "CO₂ during ice ages (10°C colder)",
+    "sensitivity":  "Per CO₂ doubling (climate sensitivity)"
+  },
+  "consequences": {
+    "seaLevels":      "Rising Sea Levels",
+    "heatwaves":      "Extreme Heatwaves",
+    "storms":         "Intensified Storms",
+    "droughts":       "Expanding Droughts",
+    "floods":         "Catastrophic Floods",
+    "iceSheets":      "Melting Ice Sheets",
+    "ecosystems":     "Ecosystem Collapse",
+    "acidification":  "Ocean Acidification",
+    "foodInsecurity": "Food Insecurity",
+    "waterScarcity":  "Water Scarcity"
+  },
+  "solutions": {
+    "label": "What We Can Do",
+    "title1": "Solutions That",
+    "titleEm": "Work",
+    "body": "Stabilizing CO₂ is possible — but requires coordinated action at scale. These are proven levers. We can pull all of them simultaneously.",
+    "cat":         { "energy":"Energy", "carbon":"Carbon", "food":"Food", "waste":"Waste", "consumption":"Consumption", "policy":"Policy" },
+    "energy":      { "title":"Reduce Fossil Fuel Use",            "desc":"Transition to renewables, increase carbon pricing, and shift incentives away from oil, gas and coal. The single largest lever available." },
+    "carbon":      { "title":"Bury Biomass & Capture Carbon",     "desc":"Biochar, enhanced weathering, and direct air capture can actively remove CO₂ already in the atmosphere — not just slow new emissions." },
+    "food":        { "title":"Eat a CO₂-Optimized Diet",          "desc":"Food production accounts for ~25% of global emissions. Shifting to plant-rich diets and choosing local foods makes a measurable difference." },
+    "waste":       { "title":"Reduce Food Waste",                  "desc":"~1/3 of all food produced globally is wasted, creating a massive hidden carbon footprint. Cutting waste is high-impact and immediate." },
+    "consumption": { "title":"Cut Overconsumption",                "desc":"Manufacturing, shipping and disposing of goods drives significant emissions. Buying less, buying smarter, extending product lifetimes all help." },
+    "policy":      { "title":"Carbon Pricing & Policy",            "desc":"Make fossil fuels reflect their true cost. Carbon taxes and cap-and-trade systems have proven track records in reducing emissions at scale." }
+  },
+  "predictor": {
+    "label": "Explore Scenarios",
+    "title1": "CO₂",
+    "titleEm": "Impact Predictor",
+    "body": "Drag the slider to explore what different CO₂ concentration levels mean for temperature and life on Earth.",
+    "estTempRise": "Estimated Temperature Rise",
+    "abovePreindustrial": "above pre-industrial",
+    "at": "At",
+    "globalTempRise": "global temperature rise",
+    "approxTimeline": "📅 Approximate timeline:",
+    "footnote": "Based on equilibrium climate sensitivity (~3°C per CO₂ doubling, IPCC AR6). Real warming depends on emission trajectories and feedbacks.",
+    "year": {
+      "preindustrial":"Pre-industrial (1750)",
+      "1990s":"~1990s",
+      "today":"Today (2025)",
+      "moderate":"~2040–2050 moderate scenario",
+      "bau":"~2070–2080 business as usual",
+      "unchecked":"~2100 unchecked emissions",
+      "extreme":"Beyond 2100 — extreme scenario"
+    },
+    "impact": {
+      "preindustrial": ["Earth in natural climate balance","Stable agricultural zones globally","Normal ocean pH and circulation","Low sea level — stable coastlines","No accelerated species loss"],
+      "1990s":         ["Mild warming already underway","Arctic warming faster than global average","Coral reefs beginning to bleach","Sea level rise accelerating","Extreme weather events more frequent"],
+      "today":         ["2024 hottest year ever recorded","Major coral reef bleaching events","Greenland & Antarctic ice loss accelerating","1 billion people at higher flood risk","$38B annual economic losses from extremes"],
+      "moderate":      ["Paris Agreement upper limit breached","Coral reefs functionally extinct (99% loss)","Extreme heat affects billions annually","Major crop yield declines in tropics","100M people face water scarcity"],
+      "bau":           ["3–4m sea level rise locked in","50% of species face extinction risk","Sahara-like conditions in Mediterranean","Annual extreme heat events become norm","Major food system disruptions globally"],
+      "unchecked":     ["Ice sheets irreversibly collapsing","7–10m sea level rise over centuries","Most tropical regions uninhabitable","Mass migration of billions","Global food system failure risk"],
+      "extreme":       ["Climate not seen in 34 million years","Near-total loss of polar ice","Sea levels 20–40m above today (eventual)","Mass extinction event underway","Civilizational-scale disruption"]
+    }
+  },
+  "timeline": {
+    "era": {
+      "natural":"800,000–10,000 Years Ago",
+      "miocene":"14 Million Years Ago — Miocene",
+      "industrial":"1750–1950 — Industrial Revolution",
+      "accel":"1960–2000 — Acceleration",
+      "now":"2025 — Now"
+    },
+    "title": {
+      "natural":"Natural Ice Age Cycles",
+      "miocene":"Last Time CO₂ Was This High",
+      "ignition":"The Carbon Ignition",
+      "accel":"The Great Acceleration",
+      "now":"Uncharted Climate Territory"
+    },
+    "desc": {
+      "natural":"CO₂ oscillated naturally between 180–300 ppm for 800,000 years, in sync with Earth's orbital cycles. Ice ages plunged temperatures 10°C; warm interglacials rose to ~280 ppm. No human civilization existed.",
+      "miocene":"Earth was 4°C warmer globally. No polar ice sheets as we know them. Sea levels were 20–40 meters higher. The continents looked similar but the climate was radically different — no humans, no modern ecosystems.",
+      "ignition":"Coal, then oil and gas began releasing carbon stored over millions of years. CO₂ rose slowly at first. By 1950 we crossed 310 ppm — still within range of natural variation, but the trajectory was set.",
+      "accel":"The Keeling Curve shows an unmistakable upward trend from 1958. Global GDP growth, population explosion, and fossil fuel dependency compound. Each decade adds more CO₂ than the last.",
+      "now":"We've passed the 1.5°C threshold. The rise is 100× faster than any natural transition in the geological record. The last time Earth saw this CO₂, humans didn't exist. We are the experiment."
+    },
+    "badge": {
+      "natural":"Stable Natural Range",
+      "miocene":"Deep Time Signal",
+      "ignition":"The Starting Gun",
+      "accel":"Accelerating",
+      "now":"⚠ We Are Here"
+    },
+    "short": {
+      "natural":"Natural Ice Age…",
+      "miocene":"Last Time CO₂…",
+      "ignition":"The Carbon Ignition…",
+      "accel":"The Great Acceleration…",
+      "now":"Uncharted Climate…"
+    },
+    "spark": {
+      "0":"−800k yr",
+      "1":"14M yr ago",
+      "2":"1750",
+      "3":"1980",
+      "4":"Now"
+    }
+  },
+  "sources": {
+    "label": "Data Sources",
+    "noaa":      "→ NOAA Mauna Loa CO₂",
+    "wmo":       "→ WMO 2024 Temperature Record",
+    "nasaCo2":   "→ NASA CO₂ History",
+    "science":   "→ Science.org Deep Climate",
+    "pennState": "→ Penn State Ice Core Data",
+    "nasaTemp":  "→ NASA Temperature Record"
+  }
+}

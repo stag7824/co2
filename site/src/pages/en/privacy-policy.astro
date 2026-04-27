@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AddressBlock from '../../components/AddressBlock.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { LEGAL, HOSTING, LEGAL_LAST_UPDATED, SITE } from '../../config';
+const lang = 'en';
+const alt = { de: '/datenschutz', en: '/en/privacy-policy' };
+---
+<BaseLayout title="Privacy Policy" lang={lang} alternateUrls={alt} headerVariant="simple">
+  <article class="legal-prose">
+    <h1>Privacy Policy</h1>
+    <p class="muted">
+      This privacy policy informs you, in accordance with Art. 13 GDPR, about the processing of
+      personal data when visiting this website ({SITE.url}). The German version is the legally
+      authoritative one.
+    </p>
+
+    <h2>1. Controller</h2>
+    <p>The controller within the meaning of the GDPR is:</p>
+    <AddressBlock />
+    <p>
+      Email: <Placeholder value={LEGAL.email} /><br />
+      Phone: <Placeholder value={LEGAL.phone} />
+    </p>
+
+    <h2>2. Hosting</h2>
+    <p>
+      We host our website with {HOSTING.providerName}, {HOSTING.providerAddress}.
+      When you visit our website, {HOSTING.providerName} processes various log files including your
+      IP address. For details, see the provider's privacy policy:
+      <a href={HOSTING.providerPrivacyUrl} rel="noopener noreferrer" target="_blank">{HOSTING.providerPrivacyUrl}</a>.
+    </p>
+    <p>
+      The use of {HOSTING.providerName} is based on Art. 6 (1) (f) GDPR. We have a legitimate interest
+      in a reliable presentation of our website. A data processing agreement (DPA) under Art. 28 GDPR
+      has been concluded with the provider.
+    </p>
+
+    <h2>3. Server log files</h2>
+    <p>
+      When you access these pages, our hosting provider automatically collects information that your
+      browser transmits and stores it in server log files. This includes:
+    </p>
+    <ul>
+      <li>browser type and version</li>
+      <li>operating system used</li>
+      <li>referrer URL</li>
+      <li>host name of the accessing computer</li>
+      <li>time of the server request</li>
+      <li>IP address</li>
+    </ul>
+    <p>
+      This data is not merged with other data sources. Collection is based on Art. 6 (1) (f) GDPR;
+      the website operator has a legitimate interest in the technically error-free presentation and
+      the optimization of its website.
+    </p>
+
+    <h2>4. SSL/TLS encryption</h2>
+    <p>
+      For security reasons and to protect the transmission of confidential content, this site uses
+      SSL/TLS encryption. You can recognize an encrypted connection by the fact that the address bar
+      of the browser changes from "http://" to "https://".
+    </p>
+
+    <h2>5. Contact</h2>
+    <p>
+      If you contact us by email, your inquiry, including all personal data resulting from it, will
+      be stored and processed by us for the purpose of handling your request. We will not share this
+      data without your consent. The legal basis is Art. 6 (1) (b) GDPR (contract / pre-contractual
+      measures) or Art. 6 (1) (f) GDPR (legitimate interest in efficient processing).
+    </p>
+
+    <h2>6. Newsletter</h2>
+    <p>
+      If you subscribe to our newsletter, we use your email address to send you information about our
+      activities. Subscription uses the double opt-in procedure: after signing up, you will receive a
+      confirmation email asking you to confirm the subscription. The legal basis is Art. 6 (1) (a)
+      GDPR (consent).
+    </p>
+    <p>
+      You can withdraw your consent at any time with effect for the future, e.g. via the unsubscribe
+      link in any newsletter or by sending a message to <Placeholder value={LEGAL.email} />.
+    </p>
+    <p>
+      <strong>Note:</strong> the subscription form on this website is currently a placeholder. Once a
+      newsletter provider is integrated, this section will be updated with the provider's name and
+      address, the country of data processing, and the corresponding data processing agreement.
+    </p>
+
+    <h2>7. Links to social networks and Discord</h2>
+    <p>
+      Our website contains hyperlinks to profiles on social networks and to our Discord server.
+      These are plain hyperlinks only — we do not embed any third-party content (e.g. "Like" buttons,
+      plug-ins, embedded posts). Simply viewing our pages therefore does not transmit any data to
+      these providers.
+    </p>
+    <p>
+      Only when you actively click a link will you be taken to the third party's site. We have no
+      influence on the data processing that takes place there. Please refer to the respective
+      provider's privacy notice.
+    </p>
+
+    <h2>8. Cookies</h2>
+    <p>
+      This website does not use any cookies that are not strictly technically necessary, and no
+      tracking or analytics cookies. Should consent-requiring cookies or comparable technologies be
+      used in the future, we will obtain your consent in advance pursuant to § 25 (1) TDDDG.
+    </p>
+
+    <h2>9. Your rights</h2>
+    <p>You have the following rights regarding your personal data:</p>
+    <ul>
+      <li>Right of access (Art. 15 GDPR)</li>
+      <li>Right to rectification (Art. 16 GDPR)</li>
+      <li>Right to erasure (Art. 17 GDPR)</li>
+      <li>Right to restriction of processing (Art. 18 GDPR)</li>
+      <li>Right to data portability (Art. 20 GDPR)</li>
+      <li>Right to object (Art. 21 GDPR)</li>
+      <li>Right to withdraw consent (Art. 7 (3) GDPR)</li>
+    </ul>
+    <p>
+      To exercise your rights, a message to <Placeholder value={LEGAL.email} /> is sufficient.
+    </p>
+
+    <h2>10. Right to lodge a complaint</h2>
+    <p>
+      You have the right to lodge a complaint with a data protection supervisory authority (Art. 77
+      GDPR). The competent authority is the supervisory authority of the federal state in which the
+      controller is based, or the Federal Commissioner for Data Protection and Freedom of
+      Information (BfDI):
+      <a href="https://www.bfdi.bund.de/" rel="noopener noreferrer" target="_blank">https://www.bfdi.bund.de/</a>.
+    </p>
+
+    <h2>11. Storage period</h2>
+    <p>
+      Personal data is only stored for as long as is necessary to achieve the purpose of processing
+      or as required by statutory retention obligations. After that, the data is routinely deleted.
+    </p>
+
+    <h2>12. Changes to this privacy policy</h2>
+    <p>
+      We reserve the right to adapt this privacy policy so that it always complies with current legal
+      requirements or to reflect changes to our services. Your renewed visit will be subject to the
+      new privacy policy.
+    </p>
+
+    <hr />
+    <p class="muted small">Last updated: {LEGAL_LAST_UPDATED}</p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+import { t, type Lang } from '../../i18n/index';
+import data from '../../data/consequences.json';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const items = data.items as { icon: string; labelKey: string }[];
+---
+<section class="warning-section">
+  <div class="container">
+    <div class="section-label">{t(lang, 'warning.label')}</div>
+    <h2 class="section-title reveal">
+      {t(lang, 'warning.title1')} <em>{t(lang, 'warning.titleEm')}</em>
+    </h2>
+    <div class="warning-banner reveal">
+      <div class="warning-title">
+        {t(lang, 'warning.bannerTitle1')} <em>{t(lang, 'warning.bannerTitleEm')}</em>
+      </div>
+      <p class="warning-desc">{t(lang, 'warning.bannerDesc')}</p>
+      <div class="consequences-grid">
+        {items.map((c) => (
+          <div class="consequence-pill"><span>{c.icon}</span> {t(lang, c.labelKey)}</div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

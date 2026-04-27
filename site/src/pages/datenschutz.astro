@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AddressBlock from '../components/AddressBlock.astro';
+import Placeholder from '../components/Placeholder.astro';
+import { LEGAL, HOSTING, LEGAL_LAST_UPDATED, SITE } from '../config';
+const lang = 'de';
+const alt = { de: '/datenschutz', en: '/en/privacy-policy' };
+---
+<BaseLayout title="Datenschutzerklärung" lang={lang} alternateUrls={alt} headerVariant="simple">
+  <article class="legal-prose">
+    <h1>Datenschutzerklärung</h1>
+    <p class="muted">
+      Diese Datenschutzerklärung informiert Sie nach Art. 13 DSGVO über die Verarbeitung
+      personenbezogener Daten beim Besuch dieser Website ({SITE.url}).
+    </p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>Verantwortlicher im Sinne der DSGVO ist:</p>
+    <AddressBlock />
+    <p>
+      E-Mail: <Placeholder value={LEGAL.email} /><br />
+      Telefon: <Placeholder value={LEGAL.phone} />
+    </p>
+
+    <h2>2. Hosting</h2>
+    <p>
+      Wir hosten unsere Website bei der {HOSTING.providerName}, {HOSTING.providerAddress}.
+      Wenn Sie unsere Website besuchen, verarbeitet die {HOSTING.providerName} verschiedene
+      Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerklärung des
+      Anbieters: <a href={HOSTING.providerPrivacyUrl} rel="noopener noreferrer" target="_blank">{HOSTING.providerPrivacyUrl}</a>.
+    </p>
+    <p>
+      Die Nutzung von {HOSTING.providerName} erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+      Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer
+      Website. Mit dem Anbieter wurde ein Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO
+      geschlossen.
+    </p>
+
+    <h2>3. Server-Logfiles</h2>
+    <p>
+      Beim Aufruf der Seiten werden durch unseren Hoster automatisch Informationen erfasst und
+      in Server-Logfiles gespeichert, die Ihr Browser übermittelt. Dies sind:
+    </p>
+    <ul>
+      <li>Browsertyp und -version</li>
+      <li>verwendetes Betriebssystem</li>
+      <li>Referrer-URL</li>
+      <li>Hostname des zugreifenden Rechners</li>
+      <li>Uhrzeit der Serveranfrage</li>
+      <li>IP-Adresse</li>
+    </ul>
+    <p>
+      Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die
+      Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO; der Websitebetreiber hat
+      ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung
+      seiner Website.
+    </p>
+
+    <h2>4. SSL-/TLS-Verschlüsselung</h2>
+    <p>
+      Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher
+      Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie
+      daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt.
+    </p>
+
+    <h2>5. Kontaktaufnahme</h2>
+    <p>
+      Wenn Sie uns per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden
+      personenbezogenen Daten zum Zweck der Bearbeitung Ihres Anliegens bei uns gespeichert und
+      verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertrag/vorvertragliche Maßnahmen) bzw.
+      Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an effektiver Bearbeitung).
+    </p>
+
+    <h2>6. Newsletter</h2>
+    <p>
+      Sofern Sie sich für unseren Newsletter anmelden, verwenden wir Ihre E-Mail-Adresse zum
+      Versand von Informationen über unsere Aktivitäten. Die Anmeldung erfolgt im
+      Double-Opt-In-Verfahren: Nach der Anmeldung erhalten Sie eine Bestätigungs-E-Mail mit der
+      Bitte, die Anmeldung zu bestätigen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
+    </p>
+    <p>
+      Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, etwa über den
+      Abmeldelink in jedem Newsletter oder durch eine Nachricht an
+      <Placeholder value={LEGAL.email} />.
+    </p>
+    <p>
+      <strong>Hinweis:</strong> Das Anmeldeformular auf dieser Website ist derzeit ein Platzhalter.
+      Sobald ein Newsletter-Dienstleister eingebunden ist, wird dieser Abschnitt um Name und Anschrift
+      des Anbieters, das Land der Datenverarbeitung und den entsprechenden
+      Auftragsverarbeitungsvertrag ergänzt.
+    </p>
+
+    <h2>7. Verlinkungen zu sozialen Netzwerken und Discord</h2>
+    <p>
+      Auf unserer Website finden sich Hyperlinks zu Profilen in sozialen Netzwerken sowie zu unserem
+      Discord-Server. Es handelt sich ausschließlich um verlinkte URLs — wir betten keine Inhalte
+      (z. B. „Like"-Buttons, Plug-ins, eingebettete Beiträge) ein. Beim bloßen Anzeigen unserer Seite
+      werden daher keine Daten an die jeweiligen Anbieter übertragen.
+    </p>
+    <p>
+      Erst wenn Sie aktiv auf einen Link klicken, gelangen Sie auf die Seite des jeweiligen
+      Drittanbieters. Auf die dort stattfindende Datenverarbeitung haben wir keinen Einfluss.
+      Bitte beachten Sie die Datenschutzhinweise des jeweiligen Anbieters.
+    </p>
+
+    <h2>8. Cookies</h2>
+    <p>
+      Diese Website verwendet keine Cookies, die nicht technisch zwingend erforderlich sind, und
+      keine Tracking- oder Analyse-Cookies. Sollten in Zukunft einwilligungspflichtige Cookies oder
+      vergleichbare Technologien eingesetzt werden, holen wir Ihre Einwilligung gemäß § 25 Abs. 1 TDDDG
+      (Telekommunikation-Digitale-Dienste-Datenschutz-Gesetz) vorher ein.
+    </p>
+
+    <h2>9. Ihre Rechte als betroffene Person</h2>
+    <p>Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Recht auf Widerspruch (Art. 21 DSGVO)</li>
+      <li>Recht auf Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
+    </ul>
+    <p>
+      Zur Ausübung Ihrer Rechte genügt eine Nachricht an <Placeholder value={LEGAL.email} />.
+    </p>
+
+    <h2>10. Beschwerderecht bei der Aufsichtsbehörde</h2>
+    <p>
+      Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO).
+      Zuständig ist die Aufsichtsbehörde des Bundeslandes, in dem der Verantwortliche seinen Sitz hat,
+      oder die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI):
+      <a href="https://www.bfdi.bund.de/" rel="noopener noreferrer" target="_blank">https://www.bfdi.bund.de/</a>.
+    </p>
+
+    <h2>11. Speicherdauer</h2>
+    <p>
+      Personenbezogene Daten werden nur so lange gespeichert, wie dies zur Erreichung des
+      Verarbeitungszwecks erforderlich ist oder gesetzliche Aufbewahrungspflichten dies vorsehen.
+      Anschließend werden die Daten routinemäßig gelöscht.
+    </p>
+
+    <h2>12. Änderungen dieser Datenschutzerklärung</h2>
+    <p>
+      Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen
+      rechtlichen Anforderungen entspricht oder Änderungen unserer Leistungen umgesetzt werden, z. B.
+      bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
+    </p>
+
+    <hr />
+    <p class="muted small">Stand: {LEGAL_LAST_UPDATED}</p>
+  </article>
+</BaseLayout>

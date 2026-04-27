@@ -1,0 +1,21 @@
+{
+  "items": [
+    { "id":"natural", "ppm":"~180–300 ppm",     "eraKey":"timeline.era.natural",   "titleKey":"timeline.title.natural",     "descKey":"timeline.desc.natural",     "dot":"teal",   "badgeKey":"timeline.badge.natural",     "shortKey":"timeline.short.natural" },
+    { "id":"miocene", "ppm":"~400 ppm",         "eraKey":"timeline.era.miocene",   "titleKey":"timeline.title.miocene",     "descKey":"timeline.desc.miocene",     "dot":"amber",  "badgeKey":"timeline.badge.miocene",     "shortKey":"timeline.short.miocene" },
+    { "id":"ignition","ppm":"280 → 310 ppm",    "eraKey":"timeline.era.industrial","titleKey":"timeline.title.ignition",    "descKey":"timeline.desc.ignition",    "dot":"amber",  "badgeKey":"timeline.badge.ignition",    "shortKey":"timeline.short.ignition" },
+    { "id":"accel",   "ppm":"317 → 369 ppm",    "eraKey":"timeline.era.accel",     "titleKey":"timeline.title.accel",       "descKey":"timeline.desc.accel",       "dot":"amber",  "badgeKey":"timeline.badge.accel",       "shortKey":"timeline.short.accel" },
+    { "id":"now",     "ppm":"425 ppm — Rising", "eraKey":"timeline.era.now",       "titleKey":"timeline.title.now",         "descKey":"timeline.desc.now",         "dot":"danger", "badgeKey":"timeline.badge.now",         "shortKey":"timeline.short.now" }
+  ],
+  "defaultIndex": 4,
+  "sparklinePoints": [
+    [-800000,190],[-400000,183],[-120000,240],[-15000,195],
+    [-12000,240],[-1000,271],[1750,280],[1960,317],[2025,425]
+  ],
+  "sparklineMarkers": [
+    { "i":0, "x":-600000, "ppm":200, "color":"var(--teal)",   "labelKey":"timeline.spark.0" },
+    { "i":1, "x":-200000, "ppm":280, "color":"var(--amber)",  "labelKey":"timeline.spark.1" },
+    { "i":2, "x":1820,    "ppm":285, "color":"var(--amber)",  "labelKey":"timeline.spark.2" },
+    { "i":3, "x":1980,    "ppm":340, "color":"#e8a045",       "labelKey":"timeline.spark.3" },
+    { "i":4, "x":2025,    "ppm":425, "color":"var(--danger)", "labelKey":"timeline.spark.4" }
+  ]
+}

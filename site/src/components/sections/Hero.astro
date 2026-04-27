@@ -1,0 +1,50 @@
+---
+import { t, type Lang } from '../../i18n/index';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+---
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-eyebrow">{t(lang, 'hero.eyebrow')}</div>
+  <h1>{t(lang, 'hero.title1')} <em>{t(lang, 'hero.title2')}</em> {t(lang, 'hero.title3')}</h1>
+  <p class="hero-sub">{t(lang, 'hero.subtitle')}</p>
+  <div class="hero-ppm">
+    <div class="ppm-number" id="ppm-counter">425 ppm</div>
+    <div class="ppm-label">{t(lang, 'hero.ppmLabel')}</div>
+    <div class="ppm-context">{t(lang, 'hero.ppmContext')}</div>
+  </div>
+  <div class="hero-actions">
+    <a href="#discord" class="btn-primary">{t(lang, 'hero.ctaPrimary')}</a>
+    <a href="#charts" class="btn-ghost">{t(lang, 'hero.ctaSecondary')}</a>
+  </div>
+</section>
+
+<script>
+  // PPM counter animation — runs once when hero enters viewport.
+  function animatePPM() {
+    const el = document.getElementById('ppm-counter');
+    if (!el) return;
+    const start = 280, end = 425, dur = 2200;
+    const t0 = performance.now();
+    function tick(now: number) {
+      const t = Math.min((now - t0) / dur, 1);
+      const ease = 1 - Math.pow(1 - t, 3);
+      el!.textContent = Math.round(start + (end - start) * ease) + ' ppm';
+      if (t < 1) requestAnimationFrame(tick);
+      else el!.textContent = end + ' ppm';
+    }
+    requestAnimationFrame(tick);
+  }
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) { animatePPM(); obs.disconnect(); }
+      }, { threshold: 0.3 });
+      obs.observe(hero);
+    } else {
+      animatePPM();
+    }
+  }
+</script>
