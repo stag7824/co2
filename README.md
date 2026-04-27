@@ -1,22 +1,241 @@
-# CODING AGENTS: READ THIS FIRST
+# 🌀 ReduceCO2Now
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+> Climate action, grounded in science — driven by people.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Bilingual (DE / EN) static website for the **ReduceCO2Now** initiative.
+Built with [Astro](https://astro.build) + a few [React](https://react.dev) islands for the
+interactive charts. Designed to be hosted on **Strato** shared hosting (Germany)
+and fully compliant with German law on day one (TMG/DDG, MStV, DSGVO).
 
-## What you should do — IMPORTANT
+- 🌍 Production: <https://reduceco2now.com>
+- 🇩🇪 German is the default locale (`/`)
+- 🇬🇧 English at `/en/`
 
-**Read `co2/project/ReduceCO2Now.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+---
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## ⚡ Quick start
 
-## About the design files
+```bash
+git clone <repo-url>
+cd reduceCo2Now/co2
+npm install
+npm run dev          # → http://localhost:4321
+```
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+| Command           | What it does                                |
+| ----------------- | ------------------------------------------- |
+| `npm run dev`     | Astro dev server with HMR                   |
+| `npm run build`   | Static build → `dist/`                      |
+| `npm run preview` | Serve the built site locally to verify      |
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+Requirements: **Node.js ≥ 18** (developed and CI'd on Node 22).
 
-## Bundle contents
+---
 
-- `co2/README.md` — this file
-- `co2/project/` — the `co2` project files (HTML prototypes, assets, components)
+## 🐳 Run in Docker
+
+A multi-stage `Dockerfile` is included. It builds the Astro site and serves the
+static `dist/` via nginx on **port 3000**.
+
+```bash
+cd co2
+
+# build
+docker build -t reduceco2now .
+
+# run
+docker run --rm -p 3000:3000 --name reduceco2now reduceco2now
+# → http://localhost:3000
+```
+
+Or with `docker compose` (drop this in `docker-compose.yml`):
+
+```yaml
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+```
+
+The container ships gzip + sensible cache headers + the same security headers
+as the Strato `.htaccess` (HSTS aside — terminate TLS at your proxy/CDN).
+
+---
+
+## 🗂 Project structure
+
+```
+co2/
+├─ astro.config.mjs            # i18n DE/EN, sitemap, trailingSlash policy
+├─ Dockerfile                  # build + nginx on :3000
+├─ TODO.md                     # ★ pre-launch checklist (read this!)
+├─ public/
+│  ├─ logo.svg                 # ★ vector site logo
+│  ├─ favicon.svg              # browser tab icon
+│  ├─ .htaccess                # HTTPS + security headers (Strato Apache)
+│  └─ robots.txt
+└─ src/
+   ├─ config.ts                # ★ all legal placeholders + site config
+   ├─ i18n/
+   │  ├─ index.ts              # nested-key translation loader
+   │  └─ locales/{de,en}.json  # bilingual strings
+   ├─ data/                    # JSON-driven content (charts, social, sources, ...)
+   ├─ layouts/BaseLayout.astro
+   ├─ components/
+   │  ├─ Header.astro          # variant 'home' | 'simple'
+   │  ├─ Footer.astro
+   │  ├─ AddressBlock.astro
+   │  ├─ Placeholder.astro     # highlights [TODO: ...] values yellow
+   │  ├─ sections/             # one .astro per page section
+   │  └─ islands/              # React: CO2Chart, ImpactPredictor, TimelineViz
+   ├─ pages/
+   │  ├─ index.astro           # / (DE home)
+   │  ├─ impressum.astro       # /impressum
+   │  ├─ datenschutz.astro     # /datenschutz
+   │  ├─ 404.astro
+   │  └─ en/
+   │     ├─ index.astro        # /en/
+   │     ├─ legal-notice.astro
+   │     └─ privacy-policy.astro
+   └─ styles/global.css
+```
+
+---
+
+## ⚖️ German legal compliance — what's already done
+
+The site ships with everything needed to launch from Germany **on day one**:
+
+- ✅ **Impressum** (`/impressum`) — § 5 DDG / § 18 MStV
+- ✅ **Legal Notice** (`/en/legal-notice`) — English translation
+- ✅ **Datenschutzerklärung** (`/datenschutz`) — Art. 13 DSGVO,
+  hosting (Strato) named, server logs, contact, newsletter placeholder,
+  social links, data-subject rights, supervisory authority
+- ✅ **Privacy Policy** (`/en/privacy-policy`) — English translation
+- ✅ **No tracking, no third-party embeds, no non-essential cookies**
+  → no consent banner needed under § 25 TDDDG / TTDSG
+- ✅ Self-hosted fonts (`@fontsource/*`) — no Google Fonts CDN
+- ✅ Footer with permanent links to Impressum + Datenschutz on every page
+- ✅ HTTPS redirect, HSTS, CSP, security headers via `.htaccess`
+- ✅ `robots.txt` + auto-generated sitemap
+
+### What you still need to fill in
+
+All legally required values are centralized in **`src/config.ts`** and any
+`[TODO: …]` placeholder is rendered with a yellow background so it can't be
+missed.
+
+👉 See [`TODO.md`](./TODO.md) for the full pre-launch checklist.
+
+> ⚠️ **If you later add** Google Fonts, Analytics, embedded YouTube,
+> Mailchimp, etc., you must (1) add a consent banner, (2) update both
+> privacy pages with the new processor, and (3) sign a DPA (AVV).
+
+---
+
+## 🚀 Deploying to Strato
+
+Strato shared hosting serves static files via Apache out of the box.
+
+1. **Build:**
+
+   ```bash
+   cd co2
+   npm install
+   npm run build
+   ```
+
+   This produces `dist/` containing all HTML/CSS/JS/assets and the
+   `.htaccess` (copied from `public/`).
+
+2. **Upload `dist/` contents** to your Strato webspace root (typically `/`,
+   sometimes `htdocs/` — check your Strato package).
+
+   - Use **SFTP** (preferred) or the Strato HiDrive / FTP credentials from
+     the customer panel.
+   - Tools: [FileZilla](https://filezilla-project.org/),
+     [Cyberduck](https://cyberduck.io/), `rsync`, or `lftp`.
+   - Upload the **contents of `dist/`**, not the `dist` folder itself.
+   - Make sure hidden files like `.htaccess` are uploaded (toggle "show
+     hidden files" in your client).
+
+3. **Domain & SSL:** in the Strato customer panel, point `reduceco2now.com`
+   (and `www.reduceco2now.com`) to the package's web root and enable the
+   free Let's Encrypt certificate. The shipped `.htaccess` enforces HTTPS
+   automatically.
+
+4. **Verify:**
+   - <https://reduceco2now.com> → DE home
+   - <https://reduceco2now.com/en/> → EN home
+   - <https://reduceco2now.com/impressum> + `/datenschutz`
+   - <https://reduceco2now.com/sitemap-index.xml>
+   - `curl -I https://reduceco2now.com/` should include `Strict-Transport-Security`
+     and `X-Content-Type-Options: nosniff`.
+
+### Optional: rsync deploy
+
+```bash
+# .deploy.env — keep out of git
+HOST=ssh.strato.de
+USER=your-strato-user
+REMOTE=/                  # adjust to your package's web root
+
+cd co2 && npm run build \
+  && rsync -avz --delete dist/ "$USER@$HOST:$REMOTE"
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions — translations, content fixes, accessibility
+improvements, new sections.
+
+### Workflow
+
+1. Fork & branch off `main`: `git checkout -b feat/my-change`
+2. Run the dev server: `npm run dev`
+3. Make your change. Keep these in mind:
+   - **Astro components** for static content; **React islands** only when
+     interactivity is genuinely needed.
+   - **No external JS/CSS/font CDNs** without updating Datenschutz first.
+   - **Strings live in JSON**, never inline. Add to both
+     `src/i18n/locales/de.json` and `en.json` (the build verifies parity).
+   - **Data lives in `src/data/*.json`** — charts, social links, sources,
+     timelines, etc.
+4. `npm run build` must complete cleanly with **0 missing translation keys**.
+5. Open a PR. Describe the change and its DE+EN impact (if any).
+
+### Adding a new language
+
+The i18n loader is data-driven. To add e.g. French:
+
+1. Copy `src/i18n/locales/en.json` → `fr.json` and translate.
+2. Register `'fr'` in `src/i18n/index.ts` (the `Lang` type and locale map).
+3. Add `fr` to the `astro.config.mjs` i18n locales list.
+4. Mirror `src/pages/en/*.astro` under `src/pages/fr/*.astro`.
+5. Update `Header.astro`'s language switcher if you want >2 languages.
+
+### Style
+
+- Comment only what needs clarification — most code should be
+  self-documenting.
+- 2-space indent (matches Astro / Prettier defaults).
+- Prefer composition over flags — split a component before adding a 4th
+  prop.
+
+### Reporting issues
+
+Please include: page URL, browser + OS, repro steps, expected vs actual.
+Screenshots / DevTools network tab are very helpful for layout / hydration
+bugs.
+
+---
+
+## 📄 License / content
+
+© ReduceCO2Now. The code is intended for the project's own deployment.
+Reach out via the contact in the Impressum if you'd like to reuse any of
+it for a different climate-action project — we're generally happy to help.

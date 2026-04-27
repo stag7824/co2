@@ -171,7 +171,7 @@ export function ImpactPredictor({
             </div>
           ))}
         </div>
-        <div className="result-year">📅 {labels.approxTimeline}: {d.year}</div>
+        <div className="result-year">{labels.approxTimeline} {d.year}</div>
       </div>
     </div>
   );

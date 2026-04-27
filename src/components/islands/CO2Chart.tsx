@@ -221,7 +221,7 @@ interface IceLabels {
 export function IceCoreChart({ labels }: { labels: IceLabels }) {
   const [hover, setHover] = useState<{ year: number; ppm: number; x: number; y: number } | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
-  const W = 860, H = 180, PAD = { t: 15, r: 20, b: 35, l: 55 };
+  const W = 860, H = 180, PAD = { t: 15, r: 60, b: 35, l: 55 };
   const cW = W - PAD.l - PAD.r, cH = H - PAD.t - PAD.b;
   const allPts: Pt[] = [...iceCore, [1750, 280], [2025, 425]];
   const xMin = -800000, xMax = 2025, yMin = 155, yMax = 450;
@@ -229,7 +229,7 @@ export function IceCoreChart({ labels }: { labels: IceLabels }) {
   const areaPath = histPath + ` L${scaleX(2025, xMin, xMax, cW).toFixed(1)} ${cH} L0 ${cH} Z`;
   const xLabels: [number, string][] = [
     [-800000, '800k BCE'], [-600000, '600k'], [-400000, '400k'],
-    [-200000, '200k'], [-50000, '50k'], [0, '0'], [2025, 'Now'],
+    [-200000, '200k'], [-50000, '50k'], [0, '0'],
   ];
 
   function fmtYear(y: number): string {
@@ -281,14 +281,15 @@ export function IceCoreChart({ labels }: { labels: IceLabels }) {
           <path d={histPath} fill="none" stroke="#3fbcaa" strokeWidth={1.5} strokeLinejoin="round" strokeLinecap="round" />
           <line x1={scaleX(1750, xMin, xMax, cW)} y1={0} x2={scaleX(1750, xMin, xMax, cW)} y2={cH} stroke="rgba(201,168,76,0.5)" strokeWidth={1} strokeDasharray="2,3" />
           <circle cx={scaleX(2025, xMin, xMax, cW)} cy={scaleY(425, yMin, yMax, cH)} r={4} fill="#d45f5f" />
-          <text x={scaleX(2025, xMin, xMax, cW) - 4} y={scaleY(425, yMin, yMax, cH) - 8} textAnchor="end" fill="#d45f5f" fontSize={9} fontFamily="DM Mono,monospace" fontWeight="500">425 ppm</text>
+          <text x={scaleX(2025, xMin, xMax, cW) + 8} y={scaleY(425, yMin, yMax, cH) + 3} textAnchor="start" fill="#d45f5f" fontSize={9} fontFamily="DM Mono,monospace" fontWeight="500">425 ppm</text>
+          <text x={scaleX(2025, xMin, xMax, cW) + 8} y={scaleY(425, yMin, yMax, cH) + 14} textAnchor="start" fill="rgba(212,95,95,0.7)" fontSize={8} fontFamily="DM Mono,monospace">Now</text>
           {xLabels.map(([yr, label]) => (
             <text key={yr} x={scaleX(yr, xMin, xMax, cW)} y={cH + 16} textAnchor="middle" fill="rgba(138,170,144,0.6)" fontSize={9} fontFamily="DM Mono,monospace">{label}</text>
           ))}
           <text x={-35} y={cH / 2} textAnchor="middle" transform={`rotate(-90,-35,${cH / 2})`} fill="rgba(138,170,144,0.5)" fontSize={9} fontFamily="DM Mono,monospace">CO₂ ppm</text>
           <text x={10} y={15} fill="rgba(63,188,170,0.6)" fontSize={9} fontFamily="DM Mono,monospace">{labels.naturalRange}</text>
-          <rect x={cW - 160} y={5} width={155} height={22} rx={4} fill="rgba(212,95,95,0.1)" stroke="rgba(212,95,95,0.3)" strokeWidth={1} />
-          <text x={cW - 152} y={20} fill="#d45f5f" fontSize={9} fontFamily="DM Mono,monospace">{labels.industrialSpike}</text>
+          <rect x={cW * 0.45} y={5} width={155} height={22} rx={4} fill="rgba(212,95,95,0.1)" stroke="rgba(212,95,95,0.3)" strokeWidth={1} />
+          <text x={cW * 0.45 + 8} y={20} fill="#d45f5f" fontSize={9} fontFamily="DM Mono,monospace">{labels.industrialSpike}</text>
           {hover && (
             <g transform={`translate(${hover.x - PAD.l},${hover.y})`} style={{ pointerEvents: 'none' }}>
               <rect x={0} y={0} width={170} height={42} rx={8} fill="rgba(17,31,21,0.97)" stroke="rgba(120,180,130,0.3)" strokeWidth={1} />

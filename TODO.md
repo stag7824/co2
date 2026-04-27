@@ -8,7 +8,7 @@ rendered pages (yellow highlight) maps back to a value here.
 These **must** be filled in or the site is not legally compliant for a German
 audience under TMG/DDG, MStV, and DSGVO.
 
-### 1. Operator identity → `site/src/config.ts` → `LEGAL`
+### 1. Operator identity → `src/config.ts` → `LEGAL`
 - [ ] `responsibleName` — full legal name of the operator
       (e.g. "ReduceCO2Now e. V." or "Dr. Thomas Buro")
 - [ ] `legalForm` — `e. V.` / `gGmbH` / `GmbH` / empty for natural person
@@ -33,8 +33,8 @@ Required by § 18 (2) MStV for sites with journalistic-editorial content.
 ### 4. Last-updated date → `LEGAL_LAST_UPDATED`
 - [ ] Bump every time legal text changes
 
-### 5. Social URLs → `site/src/config.ts` → `SOCIAL[]` and
-      `site/src/data/social-platforms.json`
+### 5. Social URLs → `src/config.ts` → `SOCIAL[]` and
+      `src/data/social-platforms.json`
 - [ ] Replace any `[TODO: …]` URLs with real ones, **or** remove the
       entry. Listing a placeholder/non-functional account is legally
       misleading.
