@@ -1,5 +1,8 @@
 # 🌀 ReduceCO2Now
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Built with Astro](https://img.shields.io/badge/built%20with-Astro%205-FF5D01.svg)](https://astro.build)
+
 > Climate action, grounded in science — driven by people.
 
 Bilingual (DE / EN) static website for the **ReduceCO2Now** initiative.
@@ -234,8 +237,16 @@ bugs.
 
 ---
 
-## 📄 License / content
+## 📄 License
 
-© ReduceCO2Now. The code is intended for the project's own deployment.
-Reach out via the contact in the Impressum if you'd like to reuse any of
-it for a different climate-action project — we're generally happy to help.
+This project is **open source** under the [MIT License](./LICENSE).
+
+You are free to use, modify, and redistribute the code for any purpose,
+including commercial, provided you retain the copyright notice and license
+text. We'd love to hear about it if you build something cool with it.
+
+Note: textual content of the **legal pages** (Impressum / Datenschutz /
+Privacy Policy / Legal Notice) describes the operator of
+`reduceco2now.com`. If you reuse the code for your own site, you must
+**replace those texts entirely** with your own legally-required information
+— do not copy ours.
